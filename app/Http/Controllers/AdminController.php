@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller {
     public function login(Request $request) {
+        return "hello world";
         // validateions
         return redirect('login');
     }
 
     public function home() {
-        return redirect('dashboard')->->withErrors('Username or Password is incorrect');
+        return "hello world";
+        // return redirect('home')->withErrors('Username or password is incorrect');
     }
 
 }
