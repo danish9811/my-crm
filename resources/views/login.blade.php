@@ -32,7 +32,7 @@
 <div class="login-box">
   <div class="login-box-body">
     <h3 class="login-box-msg">Sign In</h3>
-    @if(session()->has('erorr'))
+    @if(session()->has('error'))
         <div class="alert alert-danger">{{ session()->get('error') }}</div>
     @endif
 
@@ -42,7 +42,7 @@
     <!-- we'll see javascript later | filhaal, we will learn laravel in deep now by building a CRM -->
 
     <!-- we have only login and one user in the users table only, so we'll focus on login only -->
-    <form action="" method="post" autocomplete="off">
+    <form  method="post" autocomplete="off">
         @csrf
 
       <div class="form-group has-feedback">
@@ -77,7 +77,7 @@
       </div>
 
     </form>
-
+    <!-- form ends here -->
 
     <div class="social-auth-links text-center">
       <p>- OR -</p>
