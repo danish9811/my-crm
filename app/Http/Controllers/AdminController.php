@@ -8,6 +8,7 @@ use App\Models\User;
 class AdminController extends Controller {
 
     public function login(Request $request) {
+
         $submit = $request['submit'];
 
         // if submit key has "submit" value, then do this, it means it is a post route, post request
@@ -28,7 +29,7 @@ class AdminController extends Controller {
         }
 
         // if submit is not clicked, then do this, it means it will called if request is get
-        // return view('login');
+        return view('login');
     }
 
     public function dashboard() {
