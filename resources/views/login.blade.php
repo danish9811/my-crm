@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+{{-- there is difference between blade commants and html comments --}}
+
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Niche Admin - Powerful Bootstrap 4 Dashboard and Admin Template</title>
+    <title>CRM | Login</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- v4.0.0-alpha.6 -->
@@ -30,12 +33,15 @@
 <div class="login-box">
   <div class="login-box-body">
     <h3 class="login-box-msg">Sign In</h3>
-    <form action="http://uxliner.com/adminkit/demo/main/ltr/index.html" method="post">
+
+    <!-- action made blank, to redirect to the same page | hahaha | good thing -->
+    <form action="" method="post">
+        @csrf
       <div class="form-group has-feedback">
-        <input type="email" class="form-control sty1" placeholder="User">
+        <input type="email" class="form-control sty1" name="email" placeholder="User">
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control sty1" placeholder="Password">
+        <input type="password" class="form-control sty1" name="password" placeholder="Password">
       </div>
       <div>
         <div class="col-xs-8">
@@ -47,11 +53,13 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4 m-t-1">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" name="submit" value="submit">Sign In</button>
         </div>
         <!-- /.col -->
       </div>
     </form>
+
+
     <div class="social-auth-links text-center">
       <p>- OR -</p>
       <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
@@ -65,17 +73,19 @@
 </div>
 <!-- /.login-box -->
 
-<!-- we wont work with javascript right now, for now only html is enough -->
+{{-- we wont work with javascript right now, for now only html is enough --}}
+{{-- <script src="{{ url('') }}/js/jquery.min.js"></script> --}}
 
-<!-- jQuery 3 -->
-{{-- <script src="{{ url('') }}/js/jquery.min.js"></script>
+{{-- v4.0.0-alpha.6 --}}
+{{-- <script src="{{ url('') }}/bootstrap/js/bootstrap.min.js"></script> --}}
 
-<!-- v4.0.0-alpha.6 -->
-<script src="{{ url('') }}/bootstrap/js/bootstrap.min.js"></script>
+{{-- template --}}
+{{-- <script src="{{ url('') }}/js/niche.html"></script>  --}}
 
-<!-- template -->
-<script src="{{ url('') }}/js/niche.html"></script> --}}
+
 </body>
 
-<!-- Mirrored from uxliner.com/adminkit/demo/main/ltr/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 May 2021 17:41:45 GMT -->
+
+
+
 </html>
