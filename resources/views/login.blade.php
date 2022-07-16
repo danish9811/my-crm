@@ -3,7 +3,6 @@
 
 {{-- there is difference between blade commants and html comments --}}
 
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,23 +32,42 @@
 <div class="login-box">
   <div class="login-box-body">
     <h3 class="login-box-msg">Sign In</h3>
+    @if(session()->has('erorr'))
+        <div class="alert alert-danger">{{ session()->get('error') }}</div>
+    @endif
 
     <!-- action made blank, to redirect to the same page | hahaha | good thing -->
-    <form action="" method="post">
+    <!-- we are not doing validations here with javascript, because this tutorial series is purely on laravel -->
+    <!-- we are learning laravel here, not the other things here | Understood  -->
+    <!-- we'll see javascript later | filhaal, we will learn laravel in deep now by building a CRM -->
+
+    <!-- we have only login and one user in the users table only, so we'll focus on login only -->
+    <form action="" method="post" autocomplete="off">
         @csrf
+
       <div class="form-group has-feedback">
-        <input type="email" class="form-control sty1" name="email" placeholder="User">
+        <input type="email" class="form-control sty1" name="email" placeholder="Email">
+        @error('email')
+            <small class="text-danger">{{ $message }}</small>
+        @enderror
       </div>
+
       <div class="form-group has-feedback">
         <input type="password" class="form-control sty1" name="password" placeholder="Password">
+        @error('password')
+            <small class="text-danger">{{ $message }}</small>
+        @enderror
       </div>
+
       <div>
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
               <input type="checkbox">
               Remember Me </label>
-            <a href="pages-recover-password.html" class="pull-right"><i class="fa fa-lock"></i> Forgot pwd?</a> </div>
+
+            <!-- todo : create forgot password tiny module -->
+            <a href="pages-recover-password.html" class="pull-right"><i class="fa fa-lock"></i> Forgot password?</a> </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4 m-t-1">
@@ -57,6 +75,7 @@
         </div>
         <!-- /.col -->
       </div>
+
     </form>
 
 
@@ -84,8 +103,5 @@
 
 
 </body>
-
-
-
 
 </html>
