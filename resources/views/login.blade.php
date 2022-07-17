@@ -32,6 +32,8 @@
 <div class="login-box">
   <div class="login-box-body">
     <h3 class="login-box-msg">Sign In</h3>
+
+    <!-- if any error in session, spit it here in danger -->
     @if(session()->has('error'))
         <div class="alert alert-danger">{{ session()->get('error') }}</div>
     @endif
@@ -44,7 +46,6 @@
     <!-- we have only login and one user in the users table only, so we'll focus on login only -->
     <form  method="post" autocomplete="off">
         @csrf
-
       <div class="form-group has-feedback">
         <input type="email" class="form-control sty1" name="email" placeholder="Email">
         @error('email')

@@ -33,7 +33,7 @@ class AdminController extends Controller {
     }
 
     public function dashboard() {
-        return view('main');
+        return view('dashboard');
     }
 
     public function logout() {
@@ -42,6 +42,13 @@ class AdminController extends Controller {
         return redirect('login');
     }
 
+    public function addLead() {
+        return view('leads/add_lead');
+    }
+
+    public function manageLeads() {
+        return view('leads/manage_leads');
+    }
 
 
 }

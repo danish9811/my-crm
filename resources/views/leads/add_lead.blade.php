@@ -1,27 +1,32 @@
 @extends('main')
 @section('dynamic_page')
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <div class="content-header sty-one">
     <h1>Form layouts</h1>
+
+    <!-- tiny bread crumb at the right of the page -->
     <ol class="breadcrumb">
-      <li><a href="#">Home</a></li>
+      <li><a href="{{ url('/home') }}">Home</a></li>
       <li><i class="fa fa-angle-right"></i> Form layouts</li>
     </ol>
+
   </div>
   <!-- Main content -->
   <div class="content">
     <div class="row">
       <div class="col-lg-12">
         <div class="card ">
+
+          <!-- page name -->
           <div class="card-header bg-blue">
             <h5 class="text-white m-b-0">Lead Information</h5>
           </div>
 
           <!-- card body start -->
           <div class="card-body">
-
 
             <form method="post" action="">
               @csrf
@@ -114,12 +119,20 @@
                 <!-- end submit button -->
 
               </form>
+              <!-- form ends here -->
+
+
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- /.content -->
+
+
+
+
+
   </div>
   <!-- /.content-wrapper -->
   @endsection
