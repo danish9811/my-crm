@@ -33,8 +33,15 @@ class AdminController extends Controller {
     }
 
     public function dashboard() {
-        return 'dashboard';
-        return view('dashboard');
+        return view('main');
     }
+
+    public function logout() {
+        \Session::flush();  // destory the session
+        \Auth::logout();    // logout the user
+        return redirect('login');
+    }
+
+
 
 }
