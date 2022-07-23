@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
+
+// route to debug and test the output just for demo and testing the eloquent and other things
+Route::get('default', [AdminController::class, 'defualtMethod']);
+
 Route::controller(AdminController::class)->group(static function() {
 
     Route::get('/login', 'login')->name('login');

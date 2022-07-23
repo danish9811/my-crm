@@ -42,6 +42,8 @@ class AdminController extends Controller {
         return redirect('login');
     }
 
+
+    // the function that goes under the prefix leads
     public function addLead() {
         return view('leads/add_lead');
     }
@@ -49,6 +51,11 @@ class AdminController extends Controller {
     public function manageLeads() {
         return view('leads/manage_leads');
     }
+
+    public function defaultMethod() {
+
+    }
+
 
 
 }
