@@ -44,12 +44,29 @@ class AdminController extends Controller {
 
 
     // the function that goes under the prefix leads
-    public function addLead() {
+    public function addLead(Request $request) {
+        $submit = $request['submit'];
+
+        // we will add backend validations only
+        if ($submit == 'submit') {
+            $request->validate([
+                'first_name'    =>  'required',
+                'last_name'     => 'required',
+                'title'     => 'required',
+                'company'   => 'required',
+                'email'     => 'required|email',
+                'phone_number' => 'required|min:10'
+                // we have no required field after phone number
+
+            ]);
+        }
+
         return view('leads/add_lead');
     }
 
+
     public function manageLeads() {
-        return view('leads/manage_leads');
+        return view('leads/manage_leads');  // the page is blank actually
     }
 
     public function defaultMethod() {
