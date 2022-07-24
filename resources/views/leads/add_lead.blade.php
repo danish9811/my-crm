@@ -35,7 +35,7 @@
                 <!-- single colomn for first anme -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <label class="control-label">First Name</label>
+                    <label class="control-label">First Name <span class="text-danger">*</span></label>
                     <input class="form-control" placeholder="First Name" type="text">
                     <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
                   </div>
@@ -44,7 +44,7 @@
                 <!-- single colomn for last name -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <label class="control-label">Last Name</label>
+                    <label class="control-label">Last Name<span class="text-danger">*</span></label>
                     <input class="form-control" placeholder="Last Name" type="text">
                     <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
                   </div>
@@ -54,7 +54,17 @@
                 <!-- single colomn for title -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <label class="control-label">Title</label>
+                    <label class="control-label">Title<span class="text-danger">*</span></label>
+                    <input class="form-control" placeholder="E-mail" type="text">
+                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+
+             <!-- single colomn for compoany -->
+                <div class="col-md-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">Company<span class="text-danger">*</span></label>
                     <input class="form-control" placeholder="E-mail" type="text">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
@@ -73,7 +83,7 @@
                 <!-- single colomn for phone number -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <label class="control-label">Phone Number</label>
+                    <label class="control-label">Phone Number<span class="text-danger">*</span></label>
                     <input class="form-control" placeholder="Contact Number" type="text">
                     <span class="fa fa-phone form-control-feedback" aria-hidden="true"></span>
                   </div>
@@ -185,14 +195,14 @@
 
 
 
-                <!-- bio -->
+                <!-- text area -->
                 <div class="col-md-12">
                   <div class="form-group has-feedback">
                     <label class="control-label">Bio</label>
-                    <input class="form-control pb-2" placeholder="E-mail" type="textarea">
-                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                    <textarea class="form-control" id="placeTextarea" rows="3" placeholder="Bio"></textarea>
                   </div>
                 </div>
+
 
 
 
