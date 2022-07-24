@@ -57,5 +57,4 @@ class AdminController extends Controller {
     }
 
 
-
 }
