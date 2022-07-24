@@ -57,7 +57,7 @@ class AdminController extends Controller {
                 'title'     => 'required',
                 'company'   => 'required',
                 'email'     => 'required|email',
-                'phone_number' => 'required|min:25'
+                'phone_number' => 'required|max:25'
                 // other fields are nullable and not made mandatory in blade
 
 
