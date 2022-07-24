@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('company', 100);
             $table->string('email', 100);
-            $table->string('phone_number', 10);
+            $table->string('phone_number', 25);
             $table->string('lead_status', 100)->nullable();  // number | and dropdown
             $table->string('lead_source', 100)->nullable();  // number | dropdown
             $table->string('street', 100)->nullable();
