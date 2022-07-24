@@ -36,7 +36,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">First Name <span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="First Name" type="text">
+                    <input class="form-control" placeholder="First Name" type="text" name="first_name">
                     <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -45,7 +45,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Last Name<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="Last Name" type="text">
+                    <input class="form-control" placeholder="Last Name" type="text" name="last_name">
                     <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Title<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="E-mail" type="text">
+                    <input class="form-control" placeholder="E-mail" type="text" name="title">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -65,7 +65,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Company<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="E-mail" type="text">
+                    <input class="form-control" placeholder="E-mail" type="text" name="company">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -75,7 +75,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">E-mail</label>
-                    <input class="form-control" placeholder="E-mail" type="text">
+                    <input class="form-control" placeholder="E-mail" type="text" name="email">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -84,7 +84,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Phone Number<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="Contact Number" type="text">
+                    <input class="form-control" placeholder="Contact Number" type="text" name="phone_number">
                     <span class="fa fa-phone form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -95,7 +95,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Lead Status</label>
-                    <select class="form-control" name="" id="">
+                    <select class="form-control" name="lead_status" id="">
                       <option value="">1</option>
                       <option value="">2</option>
                       <option value="">3</option>
@@ -111,7 +111,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Lead Source</label>
-                    <select class="form-control" name="" id="">
+                    <select class="form-control" name="lead_source" id="">
                       <option value="">1</option>
                       <option value="">2</option>
                       <option value="">3</option>
@@ -129,7 +129,7 @@
                 <div class="col-md-12">
                   <div class="form-group has-feedback">
                     <label class="control-label">Bio</label>
-                    <textarea class="form-control" id="placeTextarea" rows="3" placeholder="Bio"></textarea>
+                    <textarea class="form-control" id="placeTextarea" name="bio" rows="3" placeholder="Bio"></textarea>
                   </div>
                 </div>
 
@@ -143,7 +143,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Street</label>
-                    <input class="form-control" placeholder="E-mail" type="text">
+                    <input class="form-control" placeholder="street number" type="text" name="street">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -152,7 +152,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">City</label>
-                    <input class="form-control" placeholder="E-mail" type="text">
+                    <input class="form-control" placeholder="city name" type="text" name="city">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -162,7 +162,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">State</label>
-                    <input class="form-control" placeholder="E-mail" type="text">
+                    <input class="form-control" placeholder="state information" type="text" name="state">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -171,7 +171,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Zip Code</label>
-                    <input class="form-control" placeholder="E-mail" type="text">
+                    <input class="form-control" placeholder="zip code" type="text" name="zip_code">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -181,7 +181,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Country</label>
-                    <input class="form-control" placeholder="E-mail" type="text">
+                    <input class="form-control" placeholder="country name" type="text" name="country">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
@@ -199,7 +199,7 @@
                 <div class="col-md-12">
                   <div class="form-group has-feedback">
                     <label class="control-label">Bio</label>
-                    <textarea class="form-control" id="placeTextarea" rows="3" placeholder="Bio"></textarea>
+                    <textarea class="form-control" id="placeTextarea" name="bio" rows="3" placeholder="Bio"></textarea>
                   </div>
                 </div>
 
@@ -209,7 +209,7 @@
                 <!-- submit button -->
                 <div class="col-md-12">
                   <div class="col-md-12">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" name="submit" value="submit" class="btn btn-success">Submit</button>
                   </div>
                 </div>
                 <!-- end submit button -->
