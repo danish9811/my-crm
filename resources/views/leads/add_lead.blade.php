@@ -125,7 +125,7 @@
 
 
                 <!-- second heading for address information -->
-                <div class="col-md-12">
+                <div class="col-md-12 bg-info text-white mb-4">
                   <h2 class="text-capitalize text-center p-3 m-3">Address Information</h2>
                 </div>
 
@@ -177,6 +177,14 @@
                 </div>
 
 
+
+                <!-- second heading for address information -->
+                <div class="col-md-12 bg-info text-white mb-4">
+                  <h2 class="text-capitalize text-center p-3 m-3">Decsription Information</h2>
+                </div>
+
+
+
                 <!-- bio -->
                 <div class="col-md-12">
                   <div class="form-group has-feedback">
@@ -185,6 +193,8 @@
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
+
+
 
                 <!-- submit button -->
                 <div class="col-md-12">
