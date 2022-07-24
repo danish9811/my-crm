@@ -10,7 +10,7 @@
     <!-- tiny bread crumb at the right of the page -->
     <ol class="breadcrumb">
       <li><a href="{{ url('/home') }}">Home</a></li>
-      <li><i class="fa fa-angle-right"></i> Form layouts</li>
+      <li><i class="fa fa-angle-right"></i> Add Lead</li>
     </ol>
 
   </div>
@@ -18,10 +18,10 @@
   <div class="content">
     <div class="row">
       <div class="col-lg-12">
-        <div class="card ">
+        <div class="card p-3">
           <!-- page name -->
           <div class="card-header bg-blue">
-            <h5 class="text-white m-b-0">Lead Information</h5>
+            <h5 class="text-white m-b-0">Lead basic information</h5>
           </div>
 
           <!-- card body start -->
@@ -50,6 +50,17 @@
                   </div>
                 </div>
 
+
+                <!-- single colomn for title -->
+                <div class="col-md-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">Title</label>
+                    <input class="form-control" placeholder="E-mail" type="text">
+                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+
                 <!-- single colomn for email -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
@@ -59,23 +70,32 @@
                   </div>
                 </div>
 
-                <!-- single colomn for number -->
+                <!-- single colomn for phone number -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <label class="control-label">Contact Number</label>
+                    <label class="control-label">Phone Number</label>
                     <input class="form-control" placeholder="Contact Number" type="text">
                     <span class="fa fa-phone form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
 
-                <!-- single colomn for company -->
+
+
+                <!-- drop lead status -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <label class="control-label">Company</label>
-                    <input class="form-control" placeholder="Company" type="text">
-                    <span class="fa fa-briefcase form-control-feedback" aria-hidden="true"></span>
+                    <label class="control-label">Lead Status</label>
+                    <select class="form-control" name="" id="">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4</option>
+                      <option value="">5</option>
+                    </select>
+                    <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                   </div>
                 </div>
+
 
                 <!-- drop down single -->
                 <div class="col-md-6">
@@ -92,14 +112,8 @@
                   </div>
                 </div>
 
-                <!-- single field -->
-                <div class="col-md-6">
-                  <div class="form-group has-feedback">
-                    <label class="control-label">Website</label>
-                    <input class="form-control" placeholder="https://" type="text">
-                    <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                </div>
+
+
 
                 <!-- text area -->
                 <div class="col-md-12">
@@ -110,8 +124,67 @@
                 </div>
 
 
+                <!-- second heading for address information -->
+                <div class="col-md-12">
+                  <h2 class="text-capitalize text-center p-3 m-3">Address Information</h2>
+                </div>
+
+                <!-- street -->
+                <div class="col-md-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">Street</label>
+                    <input class="form-control" placeholder="E-mail" type="text">
+                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <!-- city -->
+                <div class="col-md-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">City</label>
+                    <input class="form-control" placeholder="E-mail" type="text">
+                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
 
 
+                <!-- state -->
+                <div class="col-md-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">State</label>
+                    <input class="form-control" placeholder="E-mail" type="text">
+                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <!-- zipcode -->
+                <div class="col-md-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">Zip Code</label>
+                    <input class="form-control" placeholder="E-mail" type="text">
+                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+
+                <!-- country -->
+                <div class="col-md-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">Country</label>
+                    <input class="form-control" placeholder="E-mail" type="text">
+                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+
+                <!-- bio -->
+                <div class="col-md-12">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">Bio</label>
+                    <input class="form-control pb-2" placeholder="E-mail" type="textarea">
+                    <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                  </div>
+                </div>
 
                 <!-- submit button -->
                 <div class="col-md-12">
