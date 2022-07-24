@@ -39,6 +39,10 @@
                     <input class="form-control" placeholder="First Name" type="text" name="first_name">
                     <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('first_name')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <!-- single colomn for last name -->
@@ -48,6 +52,10 @@
                     <input class="form-control" placeholder="Last Name" type="text" name="last_name">
                     <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('last_name')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
@@ -58,6 +66,10 @@
                     <input class="form-control" placeholder="E-mail" type="text" name="title">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('title')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
@@ -68,6 +80,10 @@
                     <input class="form-control" placeholder="E-mail" type="text" name="company">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('company')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
@@ -78,6 +94,10 @@
                     <input class="form-control" placeholder="E-mail" type="text" name="email">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <!-- single colomn for phone number -->
@@ -87,6 +107,10 @@
                     <input class="form-control" placeholder="Contact Number" type="text" name="phone_number">
                     <span class="fa fa-phone form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('phone_number')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
@@ -104,6 +128,10 @@
                     </select>
                     <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('lead_status')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
@@ -120,17 +148,10 @@
                     </select>
                     <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                   </div>
-                </div>
-
-
-
-
-                <!-- text area -->
-                <div class="col-md-12">
-                  <div class="form-group has-feedback">
-                    <label class="control-label">Bio</label>
-                    <textarea class="form-control" id="placeTextarea" name="bio" rows="3" placeholder="Bio"></textarea>
-                  </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('lead_source')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
@@ -146,6 +167,10 @@
                     <input class="form-control" placeholder="street number" type="text" name="street">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('street')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <!-- city -->
@@ -155,6 +180,10 @@
                     <input class="form-control" placeholder="city name" type="text" name="city">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('city')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
@@ -165,6 +194,10 @@
                     <input class="form-control" placeholder="state information" type="text" name="state">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('state')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <!-- zipcode -->
@@ -174,6 +207,10 @@
                     <input class="form-control" placeholder="zip code" type="text" name="zip_code">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('zip_code')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
@@ -184,6 +221,10 @@
                     <input class="form-control" placeholder="country name" type="text" name="country">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('country')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
@@ -201,6 +242,10 @@
                     <label class="control-label">Bio</label>
                     <textarea class="form-control" id="placeTextarea" name="bio" rows="3" placeholder="Bio"></textarea>
                   </div>
+                  <!-- error not handled for validation, but still we are showing its error -->
+                  @error('bio')
+                    <span class="text-danger">{{ $message }}</span>
+                  @enderror
                 </div>
 
 
