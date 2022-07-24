@@ -84,13 +84,20 @@
                             <thead>
                               <tr>
                                 <th>ID #</th>
-                                <th>Opended by</th>
-                                <th>Cust.Email</th>
-                                <th>Subject</th>
-                                <th>Status</th>
-                                <th>Assign to</th>
-                                <th>Date</th>
-                                <th>Action</th>
+                                <th>Full Name</th>
+                                <th>Title</th>
+                                <th>Company</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Lead Status</th>
+                                <th>Lead Source</th>
+                                <th>Street</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Country</th>
+                                <th>Zip Code</th>
+                                <th>Description</th>
+                                <td>Actions</td>
                               </tr>
                             </thead>
                             <tbody>
@@ -98,17 +105,25 @@
                             @foreach ($leadsDataArr as $singleValue)
                              <tr>
                                 <td>{{ $singleValue['id'] }}</td>
+                                <td>{{ $singleValue['first_name'] . ' ' . $singleValue['last_name'] }}</td>
                                 {{-- <td><img src="{{ url('') }}/img/img1.jpg" class="img-circle img-w-30" alt="User Image"> <a href="#">Alexander</a></td> --}}
-                                <td>{{ $singleValue[''] }}</td>
-                                <td>{{ $singleValue[''] }}</td>
-                                <td>{{ $singleValue[''] }}</td>
+                                <td>{{ $singleValue['title'] }}</td>
+                                <td>{{ $singleValue['company'] }}</td>
+                                <td>{{ $singleValue['email'] }}</td>
                                 {{-- <td><span class="label label-success">Complete</span></td> --}}
-                                <td>{{ $singleValue[''] }}</td>
-                                <td>{{ $singleValue[''] }}</td>
-                                <td>{{ $singleValue[''] }}</td>
+                                <td>{{ $singleValue['phone_number'] }}</td>
+                                <td>{{ $singleValue['lead_status'] }}</td>
+                                <td>{{ $singleValue['lead_source'] }}</td>
+                                <td>{{ $singleValue['street'] }}</td>
+                                <td>{{ $singleValue['city'] }}</td>
+                                <td>{{ $singleValue['state'] }}</td>
+                                <td>{{ $singleValue['country'] }}</td>
+                                <td>{{ $singleValue['zip_code'] }}</td>
+                                <td>{{ $singleValue['description'] }}</td>
+
                                 <td>
                                   <a href="" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span></a>
-                                  <a href="" class="btn btn-primary btn-sm"><span class="fa fa-trash"></span></a>
+                                  <a href="{{ url('/leads/delete-lead/' . $singleValue['id']) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="btn btn-primary btn-sm"><span class="fa fa-trash"></span></a>
                                 </td>
                               </tr>
 
@@ -117,14 +132,21 @@
                             </tbody>
                             <tfoot>
                             <tr>
-                              <th>ID #</th>
-                              <th>Opended by</th>
-                              <th>Cust.Email</th>
-                              <th>Subject</th>
-                              <th>Status</th>
-                              <th>Assign to</th>
-                              <th>Date</th>
-                            </tr>
+                                <th>ID #</th>
+                                <th>Full Name</th>
+                                <th>Title</th>
+                                <th>Company</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Lead Status</th>
+                                <th>Lead Source</th>
+                                <th>Street</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Country</th>
+                                <th>Zip Code</th>
+                                <th>Description</th>
+                              </tr>
                             </tfoot>
                           </table>
                         </div>
