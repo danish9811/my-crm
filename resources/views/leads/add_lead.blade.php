@@ -250,7 +250,7 @@
                 <div class="col-md-12">
                   <div class="form-group has-feedback">
                     <label class="control-label">Bio</label>
-                    <textarea class="form-control" id="placeTextarea" name="bio" value={{ old('bio') }} rows="3" placeholder="Bio"></textarea>
+                    <textarea class="form-control" id="placeTextarea" name="bio" rows="3" placeholder="Bio"></textarea>
                      <!-- error not handled for validation, but still we are showing its error -->
                   @error('bio')
                     <span class="text-danger">{{ $message }}</span>
