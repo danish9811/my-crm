@@ -65,11 +65,10 @@
                     <label class="control-label">Title<span class="text-danger">*</span></label>
                     <input class="form-control" placeholder="E-mail" type="text" name="title" value="{{ old('title') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
-                  @error('title')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
+                    @error('title')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
-
                 </div>
 
 
@@ -80,11 +79,9 @@
                     <input class="form-control" placeholder="E-mail" type="text" name="company" value="{{ old('company') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                     @error('company')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
-
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
-
                 </div>
 
 
@@ -98,7 +95,6 @@
                       <span class="text-danger">{{ $message }}</span>
                     @enderror
                   </div>
-
                 </div>
 
                 <!-- single colomn for phone number -->
@@ -107,16 +103,15 @@
                     <label class="control-label">Phone Number<span class="text-danger">*</span></label>
                     <input class="form-control" placeholder="Contact Number" type="text" name="phone_number" value="{{ old('phone_number') }}">
                     <span class="fa fa-phone form-control-feedback" aria-hidden="true"></span>
-
                     @error('phone_number')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
-
-
                 </div>
 
-
+                @php
+                  $leadStatusArray = ['Advertising', 'Social media', 'Direct call', 'Search'];
+                @endphp
 
                 <!-- drop lead status -->
                 <div class="col-md-6">
@@ -124,32 +119,31 @@
                     <label class="control-label">Lead Status</label>
                     <!-- check how to preserver/detail the value/option of the dropdown field and also the checkbox and radio buttons -->
                     <select class="form-control" name="lead_status" id="">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
+                      @foreach($leadStatusArray as $singleValue)
+                        <option value="{{ $singleValue }}">{{ $singleValue }}</option>
+                      @endforeach
                     </select>
                     <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                      <!-- error not handled for validation, but still we are showing its error -->
-                  @error('lead_status')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
+                    @error('lead_status')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
 
                 </div>
 
+                @php
+                  $leadStatusArray = ['Qualifications', 'Needs Analysis', 'Proposal / Leads Quotes', 'Negotiation', 'Closed / Won', 'Closed Lost'];
+                @endphp
 
                 <!-- drop down single -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Lead Source</label>
                     <select class="form-control" name="lead_source" id="">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
+                      @foreach ($leadStatusArray as $element)
+                        <option value="{{ $element }}">{{ $element }}</option>
+                      @endforeach
                     </select>
                     <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                      <!-- error not handled for validation, but still we are showing its error -->
