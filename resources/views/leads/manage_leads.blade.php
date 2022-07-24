@@ -94,33 +94,25 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>1001</td>
-                                <td><img src="{{ url('') }}/img/img1.jpg" class="img-circle img-w-30" alt="User Image"> <a href="#">Alexander</a></td>
-                                <td>alexander@gmail.com</td>
-                                <td>Sed cursus dapibus diam</td>
-                                <td><span class="label label-success">Complete</span></td>
-                                <td>Pierce Sr.</td>
-                                <td>03-10-2017</td>
-                                <td>
-                                  <a href="" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span></a>
-                                  <a href="" class="btn btn-primary btn-sm"><span class="fa fa-trash"></span></a>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>1010</td>
-                                <td><img src="{{ url('') }}/img/img2.jpg" class="img-circle img-w-30" alt="User Image"> <a href="#">John Deo</a></td>
-                                <td>johndeo@gmail.com</td>
-                                <td>Sed cursus dapibus diam</td>
-                                <td><span class="label label-success">Complete</span></td>
-                                <td>Alexander</td>
-                                <td>02-10-2017</td>
+
+                            @foreach ($leadsDataArr as $singleValue)
+                             <tr>
+                                <td>{{ $singleValue['id'] }}</td>
+                                {{-- <td><img src="{{ url('') }}/img/img1.jpg" class="img-circle img-w-30" alt="User Image"> <a href="#">Alexander</a></td> --}}
+                                <td>{{ $singleValue[''] }}</td>
+                                <td>{{ $singleValue[''] }}</td>
+                                <td>{{ $singleValue[''] }}</td>
+                                {{-- <td><span class="label label-success">Complete</span></td> --}}
+                                <td>{{ $singleValue[''] }}</td>
+                                <td>{{ $singleValue[''] }}</td>
+                                <td>{{ $singleValue[''] }}</td>
                                 <td>
                                   <a href="" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span></a>
                                   <a href="" class="btn btn-primary btn-sm"><span class="fa fa-trash"></span></a>
                                 </td>
                               </tr>
 
+                            @endforeach
 
                             </tbody>
                             <tfoot>
