@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Lead;
 
-
 class AdminController extends Controller {
 
     public function login(Request $request) {
@@ -59,8 +58,6 @@ class AdminController extends Controller {
                 'email'     => 'required|email',
                 'phone_number' => 'required|max:25'
                 // other fields are nullable and not made mandatory in blade
-
-
             ]);
 
 
@@ -86,7 +83,7 @@ class AdminController extends Controller {
 
                 // redirect the user to the /leads/manage-leads
 
-                return redirect('/leads/manage_leads');
+                return redirect('/leads/manage-leads');
                 // return redirect()->route('/manage-leads');
 
 
@@ -101,7 +98,7 @@ class AdminController extends Controller {
     }
 
     public function defaultMethod() {
-
+        // the default method to test the data
     }
 
 
