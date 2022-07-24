@@ -36,26 +36,25 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">First Name <span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="First Name" type="text" name="first_name">
+                    <input class="form-control" placeholder="First Name" type="text" name="first_name" value="{{ old('first_name') }}">
                     <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
+                    @error('first_name')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
-                  @error('first_name')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
+
                 </div>
 
                 <!-- single colomn for last name -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Last Name<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="Last Name" type="text" name="last_name">
+                    <input class="form-control" placeholder="Last Name" type="text" name="last_name" value="{{ old('last_name') }}">
                     <span class="fa fa-user form-control-feedback" aria-hidden="true"></span>
+                    @error('last_name')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
-                  @error('last_name')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
                 </div>
 
 
@@ -63,13 +62,13 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Title<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="E-mail" type="text" name="title">
+                    <input class="form-control" placeholder="E-mail" type="text" name="title" value="{{ old('title') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
                   @error('title')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
                 </div>
 
 
@@ -77,13 +76,14 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Company<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="E-mail" type="text" name="company">
+                    <input class="form-control" placeholder="E-mail" type="text" name="company" value="{{ old('company') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
-                  @error('company')
+                    @error('company')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+
+                  </div>
+
                 </div>
 
 
@@ -91,26 +91,28 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">E-mail<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="E-mail" type="text" name="email">
+                    <input class="form-control" placeholder="E-mail" type="text" name="email" value="{{ old('email') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
+                    @error('email')
+                      <span class="text-danger">{{ $message }}</span>
+                    @enderror
                   </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
-                  @error('email')
-                    <span class="text-danger">{{ $message }}</span>
-                  @enderror
+
                 </div>
 
                 <!-- single colomn for phone number -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Phone Number<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="Contact Number" type="text" name="phone_number">
+                    <input class="form-control" placeholder="Contact Number" type="text" name="phone_number" value="{{ old('phone_number') }}">
                     <span class="fa fa-phone form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
-                  @error('phone_number')
+
+                    @error('phone_number')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
+
                 </div>
 
 
@@ -119,6 +121,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Lead Status</label>
+                    <!-- check how to preserver/detail the value/option of the dropdown field and also the checkbox and radio buttons -->
                     <select class="form-control" name="lead_status" id="">
                       <option value="">1</option>
                       <option value="">2</option>
@@ -127,11 +130,12 @@
                       <option value="">5</option>
                     </select>
                     <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
+                     <!-- error not handled for validation, but still we are showing its error -->
                   @error('lead_status')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
                 </div>
 
 
@@ -147,11 +151,12 @@
                       <option value="">5</option>
                     </select>
                     <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
+                     <!-- error not handled for validation, but still we are showing its error -->
                   @error('lead_source')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
                 </div>
 
 
@@ -164,26 +169,28 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Street</label>
-                    <input class="form-control" placeholder="street number" type="text" name="street">
+                    <input class="form-control" placeholder="street number" type="text" name="street" value="{{ old('street') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
+                    <!-- error not handled for validation, but still we are showing its error -->
                   @error('street')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
                 </div>
 
                 <!-- city -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">City</label>
-                    <input class="form-control" placeholder="city name" type="text" name="city">
+                    <input class="form-control" placeholder="city name" type="text" name="city" value="{{ old('city') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
+                    <!-- error not handled for validation, but still we are showing its error -->
                   @error('city')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
                 </div>
 
 
@@ -191,26 +198,28 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">State</label>
-                    <input class="form-control" placeholder="state information" type="text" name="state">
+                    <input class="form-control" placeholder="state information" type="text" name="state" value="{{ old('state') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
+                     <!-- error not handled for validation, but still we are showing its error -->
                   @error('state')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
                 </div>
 
                 <!-- zipcode -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Zip Code</label>
-                    <input class="form-control" placeholder="zip code" type="text" name="zip_code">
+                    <input class="form-control" placeholder="zip code" type="text" name="zip_code" value="{{ old('zip_code') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
+                     <!-- error not handled for validation, but still we are showing its error -->
                   @error('zip_code')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
                 </div>
 
 
@@ -218,13 +227,14 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">Country</label>
-                    <input class="form-control" placeholder="country name" type="text" name="country">
+                    <input class="form-control" placeholder="country name" type="text" name="country" value="{{ old('country') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
+                      <!-- error not handled for validation, but still we are showing its error -->
                   @error('country')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
                 </div>
 
 
@@ -240,12 +250,13 @@
                 <div class="col-md-12">
                   <div class="form-group has-feedback">
                     <label class="control-label">Bio</label>
-                    <textarea class="form-control" id="placeTextarea" name="bio" rows="3" placeholder="Bio"></textarea>
-                  </div>
-                  <!-- error not handled for validation, but still we are showing its error -->
+                    <textarea class="form-control" id="placeTextarea" name="bio" value={{ old('bio') }} rows="3" placeholder="Bio"></textarea>
+                     <!-- error not handled for validation, but still we are showing its error -->
                   @error('bio')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
+                  </div>
+
                 </div>
 
 
