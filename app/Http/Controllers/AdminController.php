@@ -75,6 +75,7 @@ class AdminController extends Controller {
                 $leads->street = $request['street'];
                 $leads->city = $request['city'];
                 $leads->state = $request['state'];
+                $leads->country = $request['country'];
                 $leads->zip_code = $request['zip_code'];
                 $leads->description = $request['description'];
 
@@ -94,8 +95,15 @@ class AdminController extends Controller {
 
 
     public function manageLeads() {
-        return view('leads/manage_leads');  // the page is blank actually
+        return view('leads/manage_leads')->with('leadsDataArr', Lead::all());
     }
+
+    public function deleteLead(int $id) {
+        Lead::find($id)->delete();
+        return redirect('/leads/manage-leads');
+    }
+
+
 
     public function defaultMethod() {
         // the default method to test the data
