@@ -74,7 +74,7 @@
                 <!-- single colomn for email -->
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
-                    <label class="control-label">E-mail</label>
+                    <label class="control-label">E-mail<span class="text-danger">*</span></label>
                     <input class="form-control" placeholder="E-mail" type="text" name="email">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                   </div>
