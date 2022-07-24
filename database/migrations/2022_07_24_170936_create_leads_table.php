@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('leads', function (Blueprint $table) {
 
             // if the table does not have relation with another table, make it MyIsam
-
+            $table->engine = 'myIsam';
             $table->id();
             $table->string('first_name', 100);
             $table->string('last_name', 100);
