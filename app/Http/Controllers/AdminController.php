@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Lead;
+
 
 class AdminController extends Controller {
 
@@ -55,10 +57,39 @@ class AdminController extends Controller {
                 'title'     => 'required',
                 'company'   => 'required',
                 'email'     => 'required|email',
-                'phone_number' => 'required|min:10'
-                // we have no required field after phone number
+                'phone_number' => 'required|min:25'
+                // other fields are nullable and not made mandatory in blade
+
 
             ]);
+
+
+                // now pick up each key/value from request, and give to the model
+
+                $leads = new Lead();    //object of Lead model
+                $leads->first_name = $request['first_name'];
+                $leads->last_name = $request['last_name'];
+                $leads->title = $request['title'];
+                $leads->company = $request['company'];
+                $leads->email = $request['email'];
+                $leads->phone_number = $request['phone_number'];
+                $leads->lead_status = $request['lead_status'];
+                $leads->lead_source = $request['lead_source'];
+                $leads->street = $request['street'];
+                $leads->city = $request['city'];
+                $leads->state = $request['state'];
+                $leads->zip_code = $request['zip_code'];
+                $leads->description = $request['description'];
+
+                $leads->save();
+
+
+                // redirect the user to the /leads/manage-leads
+
+                return redirect('/leads/manage_leads');
+                // return redirect()->route('/manage-leads');
+
+
         }
 
         return view('leads/add_lead');
