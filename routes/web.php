@@ -22,6 +22,7 @@ Route::controller(AdminController::class)->group(static function() {
             Route::get('/add-lead', 'addLead');
             Route::post('/add-lead', 'addLead');
             Route::get('/manage-leads', 'manageLeads');
+            Route::get('/delete-lead/{id}', 'deleteLead');
         });
 
     });
