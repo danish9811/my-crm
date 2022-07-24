@@ -17,3 +17,5 @@ cycle through all the leads in the leads table.
 [Video link at current time](https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO)
 
 
+<b>url at current time<b>
+https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=431
