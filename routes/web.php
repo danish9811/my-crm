@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 
 // route to debug and test the output just for demo and testing the eloquent and other things
 Route::get('default', [AdminController::class, 'defualtMethod']);
+Route::view('test', 'test');
+
 
 Route::controller(AdminController::class)->group(static function() {
 
