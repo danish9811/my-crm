@@ -27,7 +27,8 @@
           <!-- card body start -->
           <div class="card-body">
 
-            <form method="post" action="">
+            <!-- the action is page itself, no other route will handle the action -->
+            <form method="post" action="" autocomplete="off">
               @csrf
 
               <div class="row">
@@ -91,7 +92,7 @@
                 <div class="col-md-6">
                   <div class="form-group has-feedback">
                     <label class="control-label">E-mail<span class="text-danger">*</span></label>
-                    <input class="form-control" placeholder="E-mail" type="text" name="email" value="{{ old('email') }}">
+                    <input class="form-control" placeholder="E-mail" type="email" name="email" value="{{ old('email') }}">
                     <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                     @error('email')
                       <span class="text-danger">{{ $message }}</span>
@@ -249,10 +250,10 @@
                 <!-- text area -->
                 <div class="col-md-12">
                   <div class="form-group has-feedback">
-                    <label class="control-label">Bio</label>
-                    <textarea class="form-control" id="placeTextarea" name="description" rows="3" placeholder="Bio"></textarea>
+                    <label class="control-label">Description</label>
+                    <textarea class="form-control" id="placeTextarea" name="description" rows="3" placeholder="Bio" value="{{ old('description') }}">{{ old('description') }}</textarea>
                      <!-- error not handled for validation, but still we are showing its error -->
-                  @error('bio')
+                  @error('description')
                     <span class="text-danger">{{ $message }}</span>
                   @enderror
                   </div>
