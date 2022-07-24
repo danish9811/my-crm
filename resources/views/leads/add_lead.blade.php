@@ -124,11 +124,11 @@
                     <label class="control-label">Lead Status</label>
                     <!-- check how to preserver/detail the value/option of the dropdown field and also the checkbox and radio buttons -->
                     <select class="form-control" name="lead_status" id="">
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4</option>
-                      <option value="">5</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
                     </select>
                     <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                      <!-- error not handled for validation, but still we are showing its error -->
@@ -145,11 +145,11 @@
                   <div class="form-group has-feedback">
                     <label class="control-label">Lead Source</label>
                     <select class="form-control" name="lead_source" id="">
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4</option>
-                      <option value="">5</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
                     </select>
                     <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                      <!-- error not handled for validation, but still we are showing its error -->
