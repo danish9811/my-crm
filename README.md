@@ -11,6 +11,7 @@ hold the values if page redirects on error. In the next video, I'll make the sum
 and create migration for *add_lead*, create logic for *mass assignment* and will create *model*.
 
 
-
+### video URL at current time
+[Video link at current time](https://youtu.be/jFfthBwRN9Q?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1002)
 
 
