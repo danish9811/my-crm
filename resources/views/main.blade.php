@@ -9,6 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- v4.0.0 -->
     <link rel="stylesheet" href="{{url('')}}/bootstrap/css/bootstrap.min.css">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ url('') }}/plugins/datatables/css/dataTables.bootstrap.min.css">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('')}}/img/favicon-16x16.png">
     <!-- Google Font -->
@@ -352,18 +356,30 @@
       </footer>
     </div>
     <!-- ./wrapper -->
+
     <!-- jQuery 3 -->
     <script src="{{url('')}}/js/jquery.min.js"></script>
+
     <!-- v4.0.0-alpha.6 -->
     <script src="{{url('')}}/bootstrap/js/bootstrap.min.js"></script>
+
     <!-- template -->
     <script src="{{url('')}}/js/adminkit.js"></script>
+
     <!-- Morris JavaScript -->
     <script src="{{url('')}}/plugins/raphael/raphael-min.js"></script>
     <script src="{{url('')}}/plugins/morris/morris.js"></script>
     <script src="{{url('')}}/plugins/functions/dashboard1.js"></script>
+
     <!-- Chart Peity JavaScript -->
     <script src="{{url('')}}/plugins/peity/jquery.peity.min.js"></script>
     <script src="{{url('')}}/plugins/functions/jquery.peity.init.js"></script>
+
+
+    <!-- scripts for plugins like boostrap tables  -->
+    @stack('custom-scripts')
+
+
+
   </body>
 </html>
