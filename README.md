@@ -3,15 +3,17 @@
 I'm building my own **CRM** system to put it on my porftolio
 
 ## current video link (third video | start)
-[Current video](https://youtu.be/jFfthBwRN9Q?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO)
+[Current video](https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO)
 
 ### What I'm doing now : 
-In the previous video, I've added validation error message in *add_lead* blade, make the input fields 
-hold the values if page redirects on error. In the next video, I'll make the sumbit form functionality
-and create migration for *add_lead*, create logic for *mass assignment* and will create *model*.
+In the last video, I have created migration, run the migration, created about 12 colomns, 
+and made that table engine **MyIsam** to work very fast and smoothly. Created the blade from 
+theme HTML and partiliazed, removed the extra **<tr>** from the *manage_leads* table. Now I'll
+cycle through all the leads in the leads table. 
+
 
 
 ### video URL at current time
-[Video link at current time](https://youtu.be/jFfthBwRN9Q?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1002)
+[Video link at current time](https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO)
 
 
