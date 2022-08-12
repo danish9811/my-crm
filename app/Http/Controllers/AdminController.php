@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Lead;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller {
 
@@ -43,71 +42,69 @@ class AdminController extends Controller {
         return redirect('login');
     }
 
-
     // the function that goes under the prefix leads
     public function addLead(Request $request) {
         $submit = $request['submit'];
 
         // we will add backend validations only
-        if ($submit == 'submit') {
+        if ($submit === 'submit') {
             $request->validate([
-                'first_name'    =>  'required',
-                'last_name'     => 'required',
-                'title'     => 'required',
-                'company'   => 'required',
-                'email'     => 'required|email',
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'title' => 'required',
+                'company' => 'required',
+                'email' => 'required|email',
                 'phone_number' => 'required|max:25'
                 // other fields are nullable and not made mandatory in blade
             ]);
 
+            // now pick up each key/value from request, and give to the model
 
-                // now pick up each key/value from request, and give to the model
+            $leads = new Lead();    //object of Lead model
+            $leads->first_name = $request['first_name'];
+            $leads->last_name = $request['last_name'];
+            $leads->title = $request['title'];
+            $leads->company = $request['company'];
+            $leads->email = $request['email'];
+            $leads->phone_number = $request['phone_number'];
+            $leads->lead_status = $request['lead_status'];
+            $leads->lead_source = $request['lead_source'];
+            $leads->street = $request['street'];
+            $leads->city = $request['city'];
+            $leads->state = $request['state'];
+            $leads->country = $request['country'];
+            $leads->zip_code = $request['zip_code'];
+            $leads->description = $request['description'];
 
-                $leads = new Lead();    //object of Lead model
-                $leads->first_name = $request['first_name'];
-                $leads->last_name = $request['last_name'];
-                $leads->title = $request['title'];
-                $leads->company = $request['company'];
-                $leads->email = $request['email'];
-                $leads->phone_number = $request['phone_number'];
-                $leads->lead_status = $request['lead_status'];
-                $leads->lead_source = $request['lead_source'];
-                $leads->street = $request['street'];
-                $leads->city = $request['city'];
-                $leads->state = $request['state'];
-                $leads->country = $request['country'];
-                $leads->zip_code = $request['zip_code'];
-                $leads->description = $request['description'];
+            $leads->save();
 
-                $leads->save();
+            // redirect the user to the /leads/manage-leads
 
-
-                // redirect the user to the /leads/manage-leads
-
-                return redirect('/leads/manage-leads');
-                // return redirect()->route('/manage-leads');
-
+            return redirect('/leads/manage-leads');
+            // return redirect()->route('/manage-leads');
 
         }
 
         return view('leads/add_lead');
     }
 
-
+    // it shows the complete list of data leads added
     public function manageLeads() {
         return view('leads/manage_leads')->with('leadsDataArr', Lead::all());
     }
 
+    // deleting a particular lead with dynamic id given by the get url, then redirect to manage_leads
     public function deleteLead(int $id) {
         Lead::find($id)->delete();
         return redirect('/leads/manage-leads');
     }
 
+    public function editLead() {    // edit-lead
 
+    }
 
     public function defaultMethod() {
         // the default method to test the data
     }
-
 
 }
