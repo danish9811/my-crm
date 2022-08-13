@@ -25,7 +25,7 @@ class AdminController extends Controller {
                 return redirect('/home');
             }
 
-            return redirect('/login')->withError('Username or Password is incorrect');
+            return redirect('/login')->withError('Username or Password is incorrect');  // withError method not detected by phpstorm2020.1
         }
 
         // if submit is not clicked, then do this, it means it will called if request is get
@@ -60,7 +60,7 @@ class AdminController extends Controller {
 
             // now pick up each key/value from request, and give to the model
 
-            $leads = new Lead();    //object of Lead model
+            $leads = new Lead();    // object of Lead model
             $leads->first_name = $request['first_name'];
             $leads->last_name = $request['last_name'];
             $leads->title = $request['title'];
@@ -95,7 +95,7 @@ class AdminController extends Controller {
 
     // deleting a particular lead with dynamic id given by the get url, then redirect to manage_leads
     public function deleteLead(int $id) {
-        Lead::find($id)->delete();
+        Lead::find($id)->delete();  // nullPointerException
         return redirect('/leads/manage-leads');
     }
 
@@ -106,9 +106,5 @@ class AdminController extends Controller {
     public function defaultMethod() {
         // the default method to test the data
     }
-
-
-
-
 
 }
