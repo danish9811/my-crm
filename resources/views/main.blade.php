@@ -199,7 +199,7 @@
         <!-- <i class="fa fa-angle-left pull-right"></i> </span> | remove this i with span from dashboard dropdown | removed class that animates the icon -->
         <li class="active">
           <a href="{{ url('/home') }}"> <i class="icon-home"></i> <span>Dashboard</span>
-            <span class="pull-right-container"> </a>
+            <span class="pull-right-container"> </span></a>
           <!-- we dont need collapse in dashboard | will remove it -->
           {{--
           <ul class="treeview-menu">
