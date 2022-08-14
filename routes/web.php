@@ -28,4 +28,3 @@ Route::controller(AdminController::class)->group(static function () {
 });
 
 
-
