@@ -23,7 +23,6 @@ Route::controller(AdminController::class)->group(static function () {
             Route::get('/delete-lead/{id}', 'deleteLead');
             Route::get('/edit-lead/{id}', 'editLead');
         });
-
     });
 
 });
