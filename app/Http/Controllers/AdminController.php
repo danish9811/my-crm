@@ -94,8 +94,12 @@ class AdminController extends Controller {
     }
 
     // deleting a particular lead with dynamic id given by the get url, then redirect to manage_leads
-    public function deleteLead(int $id) {
-        Lead::find($id)->delete();  // nullPointerException
+    public function deleteLead(int $id) {   // definity we pass and id here
+
+        // Lead::find($id)->delete();  // throwing nullPointerException
+
+        Lead::where('id', $id)->delete();  // nullPointerException
+
         return redirect('/leads/manage-leads');
     }
 
