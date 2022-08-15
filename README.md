@@ -19,3 +19,12 @@ cycle through all the leads in the leads table.
 
 <b>url at current time</b>
 https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=431
+
+
+<br>
+### Read and learn about
+- HTML / CSS in depth, build site from scratch
+- jquery selectors, use them in sites
+- Link your github code with production-ready deployment environment
+- build an application with vue-js within this week ENFORCED
+
