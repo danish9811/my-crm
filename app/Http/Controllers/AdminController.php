@@ -35,7 +35,6 @@ class AdminController extends Controller {
     public function dashboard() {
         return view('dashboard');
     }
-
     public function logout() {
         \Session::flush();  // destory the session
         \Auth::logout();    // logout the user
@@ -92,7 +91,6 @@ class AdminController extends Controller {
     public function manageLeads() {
         return view('leads/manage_leads')->with('leadsDataArr', Lead::all());
     }
-
     // deleting a particular lead with dynamic id given by the get url, then redirect to manage_leads
     public function deleteLead(int $id) {   // definity we pass and id here
 
