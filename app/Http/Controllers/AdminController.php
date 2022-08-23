@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller {
 
-    public function login(Request $request) {
+    public function login(Request $request) {   // login
 
         $submit = $request['submit'];
 
@@ -32,17 +32,19 @@ class AdminController extends Controller {
         return view('login');
     }
 
-    public function dashboard() {
+    public function dashboard() {   // home
         return view('dashboard');
     }
-    public function logout() {
+
+
+    public function logout() {  // logout
         \Session::flush();  // destory the session
         \Auth::logout();    // logout the user
         return redirect('login');
     }
 
     // the function that goes under the prefix leads
-    public function addLead(Request $request) {
+    public function addLead(Request $request) { // add-lead
         $submit = $request['submit'];
 
         // we will add backend validations only
@@ -88,25 +90,44 @@ class AdminController extends Controller {
     }
 
     // it shows the complete list of data leads added
-    public function manageLeads() {
+    public function manageLeads() { // manage-leads
         return view('leads/manage_leads')->with('leadsDataArr', Lead::all());
     }
+
     // deleting a particular lead with dynamic id given by the get url, then redirect to manage_leads
-    public function deleteLead(int $id) {   // definity we pass and id here
-
+    public function deleteLead(int $id) {   // delete-lead/{id}
         // Lead::find($id)->delete();  // throwing nullPointerException
+        // Lead::where('id', $id)->delete();  // nullPointerException free
+        // return redirect('/leads/manage-leads');
 
-        Lead::where('id', $id)->delete();  // nullPointerException
 
-        return redirect('/leads/manage-leads');
+        // can be a more better approach, but we are doing this along with youtuber
+        $lead = Lead::find($id);
+        if ($lead == '') {  // if found no record agianst this id
+            return redirect('/leads/manage-leads'); // simply redirect to this
+        } else {    // if found record against that id
+            $lead->delete();    // no chance of nullpointerexception to be thrown by laravel
+            return redirect('/leads/manage-leads');
+        }
+
+
+
     }
 
-    public function editLead() {    // edit-lead
 
+    public function editLead() {    // edit-lead/{id}
+        $lead = Lead::find($id);
+        if ($lead == '') {
+
+        }
     }
 
-    public function defaultMethod() {
+
+
+    public function defaultMethod() {   // default
         // the default method to test the data
     }
+
+
 
 }
