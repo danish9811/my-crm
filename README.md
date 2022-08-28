@@ -47,5 +47,6 @@ https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=431
 - Auth with google or facebook
 - The charts are not working
 - The add lead button and when added a lead the page redirect to the lead list (manage leads) and the curser remains there
-- 
+- More validations on input fields are not added
+- Datatable functionality is not fully implemented, the search feature is missing
 

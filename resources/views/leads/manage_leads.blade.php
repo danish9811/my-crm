@@ -21,7 +21,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-lg-12">
-                  <h4 class="text-black m-b-1">Support Ticket List</h4>
+                  <h4 class="text-black m-b-1">Leads Data | Records found {{ $leadsDataArr->count() }}</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum raesent mauris nec.</p>
                   <div class="row m-t-4">
                     <div class="col-lg-3 col-sm-6 col-xs-12">
