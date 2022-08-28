@@ -161,7 +161,6 @@
                     </div>
                   </div>
 
-
                   <!-- second heading for address information -->
                   <div class="col-md-12 bg-info text-white mb-4">
                     <h2 class="text-capitalize text-center p-3 m-3">Address Information</h2>
