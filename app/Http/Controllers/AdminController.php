@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller {
 
+
+    public function register(Request $request) {
+        $submit = $request['submit'];
+        if($submit == 'submit') {
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required'
+            ]);
+        }
+    }
+
+
+
     public function login(Request $request) {   // login
 
         $submit = $request['submit'];
@@ -123,7 +136,6 @@ class AdminController extends Controller {
     public function defaultMethod() {   // default
         // the default method to test the data
     }
-
 
 
 }
