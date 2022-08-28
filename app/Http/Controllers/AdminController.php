@@ -7,13 +7,19 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller {
 
-
+    /**
+     * <h3>register(Request $request)
+     * Show register form when register URI is hit, the page is to be to signup new user. Method handles
+     * if the user with same email does not exist, then create new one
+     *
+     * @return void | Error message | blade home page or login page
+     * @author danish mehmood
+     **/
     public function register(Request $request) {
         $submit = $request['submit'];
         if($submit == 'submit') {
 
             // check if email is already exists or not
-
 
             $request->validate([
                 'email' => 'required|email',
@@ -32,7 +38,14 @@ class AdminController extends Controller {
     }
 
 
-
+    /**
+     * <h3>login(Request $request)</h3>
+     * This method is written to loggin the user with given credentials, if wrong, shows the user friendly error message
+     * and redirect the user to the home page, which is dashboard. Layout is indepentident from blade layout
+     *
+     * @return void | Error message
+     * @author danish mehmood
+     **/
     public function login(Request $request) {   // login
 
         $submit = $request['submit'];
@@ -58,18 +71,39 @@ class AdminController extends Controller {
         return view('login');
     }
 
+
+    /**
+     * <h3>dashboard()</h3>
+     * Simply let the user to the access the dashboard, which is home, and protected route
+     *
+     * @return view to the dashboard
+     * @author danish mehmood
+     **/
     public function dashboard() {   // home
         return view('dashboard');
     }
 
-
+    /**
+     * <h3>logout()</h3>
+     * Logout the user by flushing the session and forgetting the authed user,
+     * redirects the user to the login page
+     *
+     * @return view
+     * @author danish mehmood
+     **/
     public function logout() {  // logout
         \Session::flush();  // destory the session
         \Auth::logout();    // logout the user
         return redirect('login');
     }
 
-    // the function that goes under the prefix leads
+
+    /**
+     * undocumented function
+     *
+     * @return void
+     * @author
+     **/
     public function addLead(Request $request) { // add-lead
         $submit = $request['submit'];
 
