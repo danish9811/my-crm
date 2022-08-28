@@ -2,7 +2,6 @@
 <html lang="en" dir="ltr">
 
 <!-- MAKE THE PAGE REGISTER BLADE  -->
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,7 +88,7 @@
         Google+</a></div>
     <!-- /.social-auth-links -->
 
-    <div class="m-t-2">Already have an account? <a href="{{  }}" class="text-center">Sign In</a></div>
+    <div class="m-t-2">Already have an account? <a href="{{ route('login') }}" class="text-center">Sign In</a></div>
   </div>
   <!-- /.login-box-body -->
 </div>

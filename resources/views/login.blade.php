@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+
 {{-- there is difference between blade commants and html comments --}}
 
 <head>
