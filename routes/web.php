@@ -24,6 +24,7 @@ Route::controller(AdminController::class)->group(static function () {
             Route::get('/manage-leads', 'manageLeads');
             Route::get('/delete-lead/{id}', 'deleteLead');
             Route::get('/edit-lead/{id}', 'editLead');
+            Route::post('/edit-lead/{id}', 'editLead');
         });
     });
 

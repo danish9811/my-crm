@@ -3,23 +3,22 @@
 I'm building my own **CRM** system to put it on my porftolio
 
 ## current video link (third video | start)
-[Current video](https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO)
+[Current video](https://youtu.be/iP3iIBdpYtA?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1)
 
 ### What I'm doing now : 
-In the last video, I have created migration, run the migration, created about 12 colomns, 
-and made that table engine **MyIsam** to work very fast and smoothly. Created the blade from 
-theme HTML and partiliazed, removed the extra **<tr>** from the *manage_leads* table. Now I'll
-cycle through all the leads in the leads table. 
+We will see how to convert lead into deal
 
 
 
 ### video URL at current time
-[Video link at current time](https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO)
+
+__Video number 5__
+[Video link at current time](https://youtu.be/iP3iIBdpYtA?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1)
 
 
 ### URL at current time
 
-https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=431
+https://youtu.be/iP3iIBdpYtA?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1
 
 <br>
 
@@ -49,4 +48,6 @@ https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=431
 - The add lead button and when added a lead the page redirect to the lead list (manage leads) and the curser remains there
 - More validations on input fields are not added
 - Datatable functionality is not fully implemented, the search feature is missing
-
+- Show sweet alert on if the form details are filled, succeeded or failed
+- Should use same blade page for adding lead and editing lead
+- 

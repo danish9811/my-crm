@@ -262,7 +262,8 @@
                   <!-- submit button -->
                   <div class="col-md-12">
                     <div class="col-md-12">
-                      <button type="submit" name="submit" value="submit" class="btn btn-success">Submit</button>
+                      <!-- show button value if the form is get or post -->
+                      <button type="submit" name="submit" value="submit" class="btn btn-success">Update</button>
                     </div>
                   </div>
                   <!-- end submit button -->

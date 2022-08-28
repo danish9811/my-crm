@@ -256,7 +256,7 @@
                   <!-- submit button -->
                   <div class="col-md-12">
                     <div class="col-md-12">
-                      <button type="submit" name="submit" value="submit" class="btn btn-success">Submit</button>
+                      <button type="submit" name="submit" value="submit" class="btn btn-success">Add Lead</button>
                     </div>
                   </div>
                   <!-- end submit button -->

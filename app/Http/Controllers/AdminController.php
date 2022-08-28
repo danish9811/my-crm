@@ -90,22 +90,22 @@ class AdminController extends Controller {
 
             // now pick up each key/value from request, and give to the model
 
-            $leads = new Lead();    // object of Lead model
-            $leads->first_name = $request['first_name'];
-            $leads->last_name = $request['last_name'];
-            $leads->title = $request['title'];
-            $leads->company = $request['company'];
-            $leads->email = $request['email'];
-            $leads->phone_number = $request['phone_number'];
-            $leads->lead_status = $request['lead_status'];
-            $leads->lead_source = $request['lead_source'];
-            $leads->street = $request['street'];
-            $leads->city = $request['city'];
-            $leads->state = $request['state'];
-            $leads->country = $request['country'];
-            $leads->zip_code = $request['zip_code'];
-            $leads->description = $request['description'];
-            $leads->save();
+            $lead = new Lead();    // object of Lead model
+            $lead->first_name = $request['first_name'];
+            $lead->last_name = $request['last_name'];
+            $lead->title = $request['title'];
+            $lead->company = $request['company'];
+            $lead->email = $request['email'];
+            $lead->phone_number = $request['phone_number'];
+            $lead->lead_status = $request['lead_status'];
+            $lead->lead_source = $request['lead_source'];
+            $lead->street = $request['street'];
+            $lead->city = $request['city'];
+            $lead->state = $request['state'];
+            $lead->country = $request['country'];
+            $lead->zip_code = $request['zip_code'];
+            $lead->description = $request['description'];
+            $lead->save();
 
             // redirect the user to the /leads/manage-leads
 
@@ -140,11 +140,45 @@ class AdminController extends Controller {
     }
 
 
-    public function editLead($id) {    // edit-lead/{id}
+    public function editLead($id, Request $request) {    // edit-lead/{id}
+
         $lead = Lead::find($id);
+
         if ($lead == '') {
             return redirect('/leads/manage-leads');
         }
+
+        if ($request['submit'] == 'submit') {
+
+            $request->validate([
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'title' => 'required',
+                'company' => 'required',
+                'email' => 'required|email',
+                'phone_number' => 'required|max:25'
+                // other fields are nullable and not made mandatory in blade
+            ]);
+
+            $lead->first_name = $request['first_name'];
+            $lead->last_name = $request['last_name'];
+            $lead->title = $request['title'];
+            $lead->company = $request['company'];
+            $lead->email = $request['email'];
+            $lead->phone_number = $request['phone_number'];
+            $lead->lead_status = $request['lead_status'];
+            $lead->lead_source = $request['lead_source'];
+            $lead->street = $request['street'];
+            $lead->city = $request['city'];
+            $lead->state = $request['state'];
+            $lead->country = $request['country'];
+            $lead->zip_code = $request['zip_code'];
+            $lead->description = $request['description'];
+            $lead->save();
+
+            return redirect('/leads/manage-leads');
+        }
+
         return view('/leads/edit_lead', ['lead_details' => $lead]);
     }
 

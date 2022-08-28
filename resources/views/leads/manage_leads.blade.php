@@ -83,7 +83,7 @@
                   </div>
                   <div class="box-body">
                     <div class="table-responsive">
-                      <table id="example2" class="table table-bordered table-hover">
+                      <table id="datatable-leads" class="table table-bordered table-hover">
                         <thead>
                         <tr>
                           <th>ID #</th>
@@ -100,7 +100,7 @@
                           <th>Country</th>
                           <th>Zip Code</th>
                           <th>Description</th>
-                          <td>Actions</td>
+                          <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -124,7 +124,7 @@
                             <td>{{ $singleValue['zip_code'] }}</td>
                             <td>{{ $singleValue['description'] }}</td>
 
-                            <td>
+                            <td class="list-inline">
                               <a href="{{ url('/leads/edit-lead/' . $singleValue['id']) }}" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span></a>
                               <a href="{{ url('/leads/delete-lead/' . $singleValue['id']) }}" onclick="return confirm('Are you sure you want to delete this record?')" class="btn btn-primary btn-sm"><span class="fa fa-trash"></span></a>
                             </td>
@@ -149,6 +149,7 @@
                           <th>Country</th>
                           <th>Zip Code</th>
                           <th>Description</th>
+                          <th>Actions</th>
                         </tr>
                         </tfoot>
                       </table>
@@ -173,14 +174,16 @@
   <script src="{{ url('') }}/plugins/datatables/dataTables.bootstrap.min.js"></script>
   <script>
       $(function () {
-          $('#example1').DataTable()
-          $('#example2').DataTable({
+          $('#datatable-leads').DataTable({
               'paging': true,
               'lengthChange': false,
               'searching': false,
               'ordering': true,
               'info': true,
-              'autoWidth': false
+              'autoWidth': false,
+              "columnDefs": [
+                { "width" : "100px", "targets": 14 }
+              ]
           })
       })
   </script>
