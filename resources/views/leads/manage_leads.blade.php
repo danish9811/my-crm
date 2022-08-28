@@ -86,20 +86,15 @@
                       <table id="datatable-leads" class="table table-bordered table-hover">
                         <thead>
                         <tr>
-                          <th>ID #</th>
-                          <th>Full Name</th>
+                          <th>First Name</th>
                           <th>Title</th>
                           <th>Company</th>
                           <th>Email</th>
                           <th>Phone Number</th>
                           <th>Lead Status</th>
                           <th>Lead Source</th>
-                          <th>Street</th>
-                          <th>City</th>
-                          <th>State</th>
                           <th>Country</th>
                           <th>Zip Code</th>
-                          <th>Description</th>
                           <th>Actions</th>
                         </tr>
                         </thead>
@@ -107,8 +102,7 @@
 
                         @foreach ($leadsDataArr as $singleValue)
                           <tr>
-                            <td>{{ $singleValue['id'] }}</td>
-                            <td>{{ $singleValue['first_name'] . ' ' . $singleValue['last_name'] }}</td>
+                            <td>{{ $singleValue['first_name'] }}</td>
                             {{-- <td><img src="{{ url('') }}/img/img1.jpg" class="img-circle img-w-30" alt="User Image"> <a href="#">Alexander</a></td> --}}
                             <td>{{ $singleValue['title'] }}</td>
                             <td>{{ $singleValue['company'] }}</td>
@@ -117,12 +111,8 @@
                             <td>{{ $singleValue['phone_number'] }}</td>
                             <td>{{ $singleValue['lead_status'] }}</td>
                             <td>{{ $singleValue['lead_source'] }}</td>
-                            <td>{{ $singleValue['street'] }}</td>
-                            <td>{{ $singleValue['city'] }}</td>
-                            <td>{{ $singleValue['state'] }}</td>
                             <td>{{ $singleValue['country'] }}</td>
                             <td>{{ $singleValue['zip_code'] }}</td>
-                            <td>{{ $singleValue['description'] }}</td>
 
                             <td class="list-inline">
                               <a href="{{ url('/leads/edit-lead/' . $singleValue['id']) }}" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span></a>
@@ -135,20 +125,15 @@
                         </tbody>
                         <tfoot>
                         <tr>
-                          <th>ID #</th>
-                          <th>Full Name</th>
+                          <th>First Name</th>
                           <th>Title</th>
                           <th>Company</th>
                           <th>Email</th>
                           <th>Phone Number</th>
                           <th>Lead Status</th>
                           <th>Lead Source</th>
-                          <th>Street</th>
-                          <th>City</th>
-                          <th>State</th>
                           <th>Country</th>
                           <th>Zip Code</th>
-                          <th>Description</th>
                           <th>Actions</th>
                         </tr>
                         </tfoot>
@@ -180,10 +165,7 @@
               'searching': false,
               'ordering': true,
               'info': true,
-              'autoWidth': false,
-              "columnDefs": [
-                { "width" : "100px", "targets": 14 }
-              ]
+              'autoWidth': false
           })
       })
   </script>
