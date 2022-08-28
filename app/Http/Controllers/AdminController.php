@@ -8,37 +8,6 @@ use Illuminate\Http\Request;
 class AdminController extends Controller {
 
     /**
-     * <h3>register(Request $request)
-     * Show register form when register URI is hit, the page is to be to signup new user. Method handles
-     * if the user with same email does not exist, then create new one
-     *
-     * @return void | Error message | blade home page or login page
-     * @author danish mehmood
-     **/
-    public function register(Request $request) {
-        $submit = $request['submit'];
-        if($submit == 'submit') {
-
-            // check if email is already exists or not
-
-            $request->validate([
-                'email' => 'required|email',
-                'password' => 'required'
-            ]);
-
-
-            if (\Auth::attempt($request->only('email', 'password'))) {
-                return redirect('/home');
-            }
-
-            return redirect('/login');
-
-
-        }
-    }
-
-
-    /**
      * <h3>login(Request $request)</h3>
      * This method is written to loggin the user with given credentials, if wrong, shows the user friendly error message
      * and redirect the user to the home page, which is dashboard. Layout is indepentident from blade layout
