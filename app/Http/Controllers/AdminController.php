@@ -76,7 +76,6 @@ class AdminController extends Controller {
             $leads->country = $request['country'];
             $leads->zip_code = $request['zip_code'];
             $leads->description = $request['description'];
-
             $leads->save();
 
             // redirect the user to the /leads/manage-leads
@@ -89,6 +88,7 @@ class AdminController extends Controller {
         return view('leads/add_lead');
     }
 
+
     // it shows the complete list of data leads added
     public function manageLeads() { // manage-leads
         return view('leads/manage_leads')->with('leadsDataArr', Lead::all());
@@ -99,29 +99,25 @@ class AdminController extends Controller {
         // Lead::find($id)->delete();  // throwing nullPointerException
         // Lead::where('id', $id)->delete();  // nullPointerException free
         // return redirect('/leads/manage-leads');
-
-
         // can be a more better approach, but we are doing this along with youtuber
+
         $lead = Lead::find($id);
         if ($lead == '') {  // if found no record agianst this id
             return redirect('/leads/manage-leads'); // simply redirect to this
-        } else {    // if found record against that id
+        } else {    // if found record against that id, delele id the redirect
             $lead->delete();    // no chance of nullpointerexception to be thrown by laravel
             return redirect('/leads/manage-leads');
         }
-
-
-
     }
 
 
-    public function editLead() {    // edit-lead/{id}
+    public function editLead($id) {    // edit-lead/{id}
         $lead = Lead::find($id);
         if ($lead == '') {
-
+            return redirect('/leads/manage-leads');
         }
+        return view('/leads/edit_lead', ['lead_details' => $lead]);
     }
-
 
 
     public function defaultMethod() {   // default
