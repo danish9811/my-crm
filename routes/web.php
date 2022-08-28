@@ -11,6 +11,7 @@ Route::controller(AdminController::class)->group(static function () {
 
     Route::get('/default', 'defualtMethod');
 
+    Route::get('/register', 'register');
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'login');
     Route::group(['middleware' => 'auth'], static function () {

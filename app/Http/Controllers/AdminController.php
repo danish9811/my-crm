@@ -11,10 +11,23 @@ class AdminController extends Controller {
     public function register(Request $request) {
         $submit = $request['submit'];
         if($submit == 'submit') {
+
+            // check if email is already exists or not
+
+
             $request->validate([
                 'email' => 'required|email',
                 'password' => 'required'
             ]);
+
+
+            if (\Auth::attempt($request->only('email', 'password'))) {
+                return redirect('/home');
+            }
+
+            return redirect('/login');
+
+
         }
     }
 
