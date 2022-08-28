@@ -40,3 +40,10 @@ https://youtu.be/tIUJ93El0qQ?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=431
 - Link your github code with production-ready deployment environment
 - build an application with vue-js within this week ENFORCED
 
+
+### Missing : 
+- Register/signup feature  
+- Remember me feature
+- Auth with google or facebook
+- 
+
