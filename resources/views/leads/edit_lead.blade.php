@@ -156,7 +156,7 @@
                       <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                       <!-- error not handled for validation, but still we are showing its error -->
                       @error('lead_source')
-                      <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                       @enderror
                     </div>
                   </div>
@@ -175,7 +175,7 @@
                       <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                       <!-- error not handled for validation, but still we are showing its error -->
                       @error('street')
-                      <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                       @enderror
                     </div>
 
@@ -189,7 +189,7 @@
                       <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                       <!-- error not handled for validation, but still we are showing its error -->
                       @error('city')
-                      <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                       @enderror
                     </div>
 
@@ -204,7 +204,7 @@
                       <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                       <!-- error not handled for validation, but still we are showing its error -->
                       @error('state')
-                      <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                       @enderror
                     </div>
 
@@ -218,7 +218,7 @@
                       <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                       <!-- error not handled for validation, but still we are showing its error -->
                       @error('zip_code')
-                      <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                       @enderror
                     </div>
 
@@ -233,7 +233,7 @@
                       <span class="fa fa-envelope-o form-control-feedback" aria-hidden="true"></span>
                       <!-- error not handled for validation, but still we are showing its error -->
                       @error('country')
-                      <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                       @enderror
                     </div>
 
@@ -253,7 +253,7 @@
                       <textarea class="form-control" id="placeTextarea" name="description" rows="3" placeholder="Bio" value="{{ $lead_details['description'] }}">{{ $lead_details['description'] }}</textarea>
                       <!-- error not handled for validation, but still we are showing its error -->
                       @error('description')
-                      <span class="text-danger">{{ $message }}</span>
+                        <span class="text-danger">{{ $message }}</span>
                       @enderror
                     </div>
 
