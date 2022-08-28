@@ -7,8 +7,8 @@
     <div class="content-header sty-one">
       <h1>Support Ticket</h1>
       <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><i class="fa fa-angle-right"></i> Support Ticket</li>
+        <li><a href="#">Manage Leads</a></li>
+        <li><i class="fa fa-angle-right"></i> Manage Leads</li>
       </ol>
     </div>
 

@@ -21,7 +21,7 @@
           <div class="card p-3">
             <!-- page name -->
             <div class="card-header bg-blue">
-              <h5 class="text-white m-b-0">Lead basic information</h5>
+              <h5 class="text-white m-b-0">Edit Lead Information</h5>
             </div>
 
             <!-- card body start -->

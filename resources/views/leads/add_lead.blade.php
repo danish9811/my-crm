@@ -9,8 +9,8 @@
 
       <!-- tiny bread crumb at the right of the page -->
       <ol class="breadcrumb">
-        <li><a href="{{ url('/home') }}">Home</a></li>
-        <li><i class="fa fa-angle-right"></i> Add Lead</li>
+        <li><a href="{{ url('/home') }}">Dashboard</a></li>
+        <li><i class="fa fa-angle-right"></i> Add Lead Inforamtion</li>
       </ol>
 
     </div>
