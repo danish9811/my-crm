@@ -30,3 +30,4 @@ Route::controller(AdminController::class)->group(static function () {
 
 });
 
+// test comment added
