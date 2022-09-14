@@ -50,4 +50,4 @@ https://youtu.be/iP3iIBdpYtA?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1
 - Datatable functionality is not fully implemented, the search feature is missing
 - Show sweet alert on if the form details are filled, succeeded or failed
 - Should use same blade page for adding lead and editing lead
-- 
+- Roles for a specific user, what he can and what he cannot

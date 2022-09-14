@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\{AdminController, DummyController};
 use Illuminate\Support\Facades\Route;
 
 // route to debug and test the output just for demo and testing the eloquent and other things
-Route::view('/test', 'test');
+
+// this is only for testing purpose
+// Route::get('/dummy', [DummyController::class, 'dummy']);    // create DummyController with dummy model too
 
 // controller group for laravel 9 route
 Route::controller(AdminController::class)->group(static function () {
@@ -14,6 +16,7 @@ Route::controller(AdminController::class)->group(static function () {
     Route::get('/register', 'register');
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'login');
+
     Route::group(['middleware' => 'auth'], static function () {
         Route::get('/home', 'dashboard');
         Route::get('/logout', 'logout');
@@ -27,7 +30,4 @@ Route::controller(AdminController::class)->group(static function () {
             Route::post('/edit-lead/{id}', 'editLead');
         });
     });
-
 });
-
-// test comment added

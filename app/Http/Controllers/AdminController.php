@@ -182,9 +182,8 @@ class AdminController extends Controller {
         return view('/leads/edit_lead', ['lead_details' => $lead]);
     }
 
-
-    public function defaultMethod() {   // default
-        // the default method to test the data
+    public function anotherMethod() {
+        // proposal
     }
 
 
