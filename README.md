@@ -51,3 +51,8 @@ https://youtu.be/iP3iIBdpYtA?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1
 - Show sweet alert on if the form details are filled, succeeded or failed
 - Should use same blade page for adding lead and editing lead
 - Roles for a specific user, what he can and what he cannot
+
+
+### Info links
+- [Install xampp in ubuntu](https://www.ubuntupit.com/how-to-install-and-configure-xampp-on-ubuntu-linux/)
+

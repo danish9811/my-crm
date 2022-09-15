@@ -11,5 +11,4 @@ class DummyController extends Controller {
 
 
 
-
 }
