@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class DummyController extends Controller {
+
+    public function index() {
+        return "Hello from the method : ". __METHOD__;
+    }
+
+
+
+
 
 }
