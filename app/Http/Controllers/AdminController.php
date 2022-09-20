@@ -12,7 +12,7 @@ class AdminController extends Controller {
      * This method is written to loggin the user with given credentials, if wrong, shows the user friendly error message
      * and redirect the user to the home page, which is dashboard. Layout is indepentident from blade layout
      *
-     * @return void | Error message
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View message
      * @author danish mehmood
      **/
     public function login(Request $request) {   // login
@@ -40,12 +40,11 @@ class AdminController extends Controller {
         return view('login');
     }
 
-
     /**
      * <h3>dashboard()</h3>
      * Simply let the user to the access the dashboard, which is home, and protected route
      *
-     * @return view to the dashboard
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View to the dashboard
      * @author danish mehmood
      **/
     public function dashboard() {   // home
@@ -57,7 +56,7 @@ class AdminController extends Controller {
      * Logout the user by flushing the session and forgetting the authed user,
      * redirects the user to the login page
      *
-     * @return view
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @author danish mehmood
      **/
     public function logout() {  // logout
@@ -66,11 +65,10 @@ class AdminController extends Controller {
         return redirect('login');
     }
 
-
     /**
      * undocumented function
      *
-     * @return void
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @author
      **/
     public function addLead(Request $request) { // add-lead
@@ -91,22 +89,7 @@ class AdminController extends Controller {
             // now pick up each key/value from request, and give to the model
 
             $lead = new Lead();    // object of Lead model
-            $lead->first_name = $request['first_name'];
-            $lead->last_name = $request['last_name'];
-            $lead->title = $request['title'];
-            $lead->company = $request['company'];
-            $lead->email = $request['email'];
-            $lead->phone_number = $request['phone_number'];
-            $lead->lead_status = $request['lead_status'];
-            $lead->lead_source = $request['lead_source'];
-            $lead->street = $request['street'];
-            $lead->city = $request['city'];
-            $lead->state = $request['state'];
-            $lead->country = $request['country'];
-            $lead->zip_code = $request['zip_code'];
-            $lead->description = $request['description'];
-            $lead->save();
-
+            $this->saveLead($lead, $request);
             // redirect the user to the /leads/manage-leads
 
             return redirect('/leads/manage-leads');
@@ -116,7 +99,6 @@ class AdminController extends Controller {
 
         return view('leads/add_lead');
     }
-
 
     // it shows the complete list of data leads added
     public function manageLeads() { // manage-leads
@@ -139,7 +121,6 @@ class AdminController extends Controller {
         }
     }
 
-
     public function editLead($id, Request $request) {    // edit-lead/{id}
 
         $lead = Lead::find($id);
@@ -160,21 +141,7 @@ class AdminController extends Controller {
                 // other fields are nullable and not made mandatory in blade
             ]);
 
-            $lead->first_name = $request['first_name'];
-            $lead->last_name = $request['last_name'];
-            $lead->title = $request['title'];
-            $lead->company = $request['company'];
-            $lead->email = $request['email'];
-            $lead->phone_number = $request['phone_number'];
-            $lead->lead_status = $request['lead_status'];
-            $lead->lead_source = $request['lead_source'];
-            $lead->street = $request['street'];
-            $lead->city = $request['city'];
-            $lead->state = $request['state'];
-            $lead->country = $request['country'];
-            $lead->zip_code = $request['zip_code'];
-            $lead->description = $request['description'];
-            $lead->save();
+            $this->saveLead($lead, $request);
 
             return redirect('/leads/manage-leads');
         }
@@ -182,9 +149,26 @@ class AdminController extends Controller {
         return view('/leads/edit_lead', ['lead_details' => $lead]);
     }
 
-    public function anotherMethod() {
-        // proposal
+    private function saveLead(Lead $lead, Request $request) {
+        $lead->first_name = $request['first_name'];
+        $lead->last_name = $request['last_name'];
+        $lead->title = $request['title'];
+        $lead->company = $request['company'];
+        $lead->email = $request['email'];
+        $lead->phone_number = $request['phone_number'];
+        $lead->lead_status = $request['lead_status'];
+        $lead->lead_source = $request['lead_source'];
+        $lead->street = $request['street'];
+        $lead->city = $request['city'];
+        $lead->state = $request['state'];
+        $lead->country = $request['country'];
+        $lead->zip_code = $request['zip_code'];
+        $lead->description = $request['description'];
+        $lead->save();
     }
 
+    public function anotherMethod() {
+
+    }
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{AdminController, DummyController};
+use App\Http\Controllers\{AdminController};
 use Illuminate\Support\Facades\Route;
 
 // route to debug and test the output just for demo and testing the eloquent and other things
