@@ -167,8 +167,11 @@ class AdminController extends Controller {
         $lead->save();
     }
 
-    public function anotherMethod() {
+
+    public function defaultMethod() {
 
     }
+
+
 
 }

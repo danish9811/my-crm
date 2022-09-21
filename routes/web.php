@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 // controller group for laravel 9 route
 Route::controller(AdminController::class)->group(static function () {
 
-    Route::get('/default', 'defualtMethod');
+    Route::get('/default', 'defaultMethod');
 
     Route::get('/register', 'register');
     Route::get('/login', 'login')->name('login');
