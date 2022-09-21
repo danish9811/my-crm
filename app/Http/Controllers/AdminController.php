@@ -169,7 +169,7 @@ class AdminController extends Controller {
 
 
     public function defaultMethod() {
-
+        // practice collection methods here
     }
 
 

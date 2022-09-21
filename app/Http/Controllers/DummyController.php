@@ -8,4 +8,5 @@ class DummyController extends Controller {
         return "Hello from the method : " . __METHOD__;
     }
 
+
 }
