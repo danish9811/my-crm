@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dummy;
 use App\Models\Lead;
+use App\Models\User;
 use Auth;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -10,6 +12,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Hash;
 use Session;
 
 class AdminController extends Controller {
@@ -145,7 +148,8 @@ class AdminController extends Controller {
     }
 
     public function defaultMethod() {
-        // practice eloquent collection
+        // practice code more and more
+
     }
 
 }
