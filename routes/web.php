@@ -53,5 +53,3 @@ Route::group(['middleware' => 'auth'], static function () {
     });
 });
 
-
-
