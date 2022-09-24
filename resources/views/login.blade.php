@@ -36,11 +36,10 @@
       <div class="alert alert-danger">{{ session()->get('error') }}</div>
     @endif
 
-  <!-- action made blank, to redirect to the same page | hahaha | good thing -->
+    <!-- action made blank, to redirect to the same page | hahaha | good thing -->
     <!-- we are not doing validations here with javascript, because this tutorial series is purely on laravel -->
     <!-- we are learning laravel here, not the other things here | Understood  -->
     <!-- we'll see javascript later | filhaal, we will learn laravel in deep now by building a CRM -->
-
     <!-- we have only login and one user in the users table only, so we'll focus on login only -->
     <form method="post" autocomplete="off">
       @csrf
