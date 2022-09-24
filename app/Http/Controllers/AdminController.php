@@ -73,7 +73,6 @@ class AdminController extends Controller {
      */
     public function addLead(Request $request) { // add-lead
         $submit = $request['submit'];
-
         if ($submit === 'submit') {
             $request->validate([
                 'first_name' => 'required',
@@ -83,12 +82,9 @@ class AdminController extends Controller {
                 'email' => 'required|email',
                 'phone_number' => 'required|max:25'
             ]);
-
             $this->saveLead(new Lead(), $request);
-
             return redirect('/leads/manage-leads');
         }
-
         return view('leads/add_lead');
     }
 
@@ -108,7 +104,7 @@ class AdminController extends Controller {
 
     public function editLead($id, Request $request) {    // edit-lead/{id}
         $lead = Lead::find($id);
-        if ($lead == '') {
+        if ($lead == '') {  // todo : handle this scenario carefull with isset, NULLs
             return redirect('/leads/manage-leads');
         }
 
