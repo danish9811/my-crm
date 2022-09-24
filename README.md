@@ -8,8 +8,6 @@ I'm building my own **CRM** system to put it on my porftolio
 ### What I'm doing now : 
 We will see how to convert lead into deal
 
-
-
 ### video URL at current time
 
 __Video number 5__
