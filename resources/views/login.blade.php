@@ -87,7 +87,7 @@
         Google+</a></div>
     <!-- /.social-auth-links -->
 
-    <div class="m-t-2">Don't have an account? <a href="pages-register.html" class="text-center">Sign Up</a></div>
+    <div class="m-t-2">Don't have an account? <a href="{{ url('/register') }}" class="text-center">Sign Up</a></div>
   </div>
   <!-- /.login-box-body -->
 </div>
