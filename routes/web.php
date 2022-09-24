@@ -3,9 +3,9 @@
 use App\Http\Controllers\{AdminController};
 use Illuminate\Support\Facades\Route;
 
-Route::get('/register', [AdminController::class, 'register']);
 Route::get('/login', [AdminController::class, 'login'])->name('login');
 Route::post('/login', [AdminController::class, 'login']);
+Route::get('/register', [AdminController::class, 'register']);  // todo : missing register method
 
 Route::get('/default', [AdminController::class, 'defaultMethod']);
 
@@ -21,4 +21,3 @@ Route::group(['middleware' => 'auth'], static function () {
         Route::post('/edit-lead/{id}', [AdminController::class, 'editLead']);
     });
 });
-
