@@ -38,7 +38,7 @@ https://youtu.be/iP3iIBdpYtA?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1
 - build an application with vue-js within this week ENFORCED
 
 
-### Missing : 
+### Missing features :
 - Register/signup feature  
 - Remember me feature
 - Auth with google or facebook
