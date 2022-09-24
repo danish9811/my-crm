@@ -3,40 +3,39 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lead;
+use Auth;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
+use Session;
 
 class AdminController extends Controller {
 
     /**
      * <h3>login(Request $request)</h3>
      * This method is written to loggin the user with given credentials, if wrong, shows the user friendly error message
-     * and redirect the user to the home page, which is dashboard. Layout is indepentident from blade layout
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View message
+     * and redirect the user to the home page, which is dashboard. Layout is indepentident from blade layout <br>
+     * Handles both <pre>get</pre> and <pre>post</pre> requests
+     * @param Request $request
+     * @return Application|Factory|View message
      * @author danish mehmood
-     **/
+     */
     public function login(Request $request) {   // login
-
         $submit = $request['submit'];
-
-        // if submit key has "submit" value, then do this, it means it is a post route, post request
-        // if the submti has the value of "submit", its the attribute value that is set in html submit button
         if ($submit === 'submit') {
-            // we have set no validation on html , but all the validation server side,
-            // https://laravel.com/docs/9.x/authentication#authenticating-users
             $request->validate([
                 'email' => 'required',
                 'password' => 'required'
             ]);
-
-            if (\Auth::attempt($request->only('email', 'password'))) {
+            if (Auth::attempt($request->only('email', 'password'))) {
                 return redirect('/home');
             }
-
+            // todo : use reponse() here just like otif guys do
             return redirect('/login')->withError('Username or Password is incorrect');  // withError method not detected by phpstorm2020.1
         }
-
-        // if submit is not clicked, then do this, it means it will called if request is get
         return view('login');
     }
 
@@ -44,7 +43,7 @@ class AdminController extends Controller {
      * <h3>dashboard()</h3>
      * Simply let the user to the access the dashboard, which is home, and protected route
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View to the dashboard
+     * @return Application|Factory|View to the dashboard
      * @author danish mehmood
      **/
     public function dashboard() {   // home
@@ -56,25 +55,25 @@ class AdminController extends Controller {
      * Logout the user by flushing the session and forgetting the authed user,
      * redirects the user to the login page
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return Application|RedirectResponse|Redirector
      * @author danish mehmood
      **/
-    public function logout() {  // logout
-        \Session::flush();  // destory the session
-        \Auth::logout();    // logout the user
+    public function logout() {
+        Session::flush();
+        Auth::logout();
         return redirect('login');
     }
 
     /**
-     * undocumented function
+     * method to add lead, the single record, or show the blade page for making user inputting the lead details
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     * @author
-     **/
+     * @param Request $request
+     * @return Application|RedirectResponse|Redirector
+     * @author danish mehmood
+     */
     public function addLead(Request $request) { // add-lead
         $submit = $request['submit'];
 
-        // we will add backend validations only
         if ($submit === 'submit') {
             $request->validate([
                 'first_name' => 'required',
@@ -83,54 +82,37 @@ class AdminController extends Controller {
                 'company' => 'required',
                 'email' => 'required|email',
                 'phone_number' => 'required|max:25'
-                // other fields are nullable and not made mandatory in blade
             ]);
 
-            // now pick up each key/value from request, and give to the model
-
-            $lead = new Lead();    // object of Lead model
-            $this->saveLead($lead, $request);
-            // redirect the user to the /leads/manage-leads
+            $this->saveLead(new Lead(), $request);
 
             return redirect('/leads/manage-leads');
-            // return redirect()->route('/manage-leads');
-
         }
 
         return view('leads/add_lead');
     }
 
-    // it shows the complete list of data leads added
     public function manageLeads() { // manage-leads
         return view('leads/manage_leads')->with('leadsDataArr', Lead::all());
     }
 
-    // deleting a particular lead with dynamic id given by the get url, then redirect to manage_leads
-    public function deleteLead(int $id) {   // delete-lead/{id}
-        // Lead::find($id)->delete();  // throwing nullPointerException
-        // Lead::where('id', $id)->delete();  // nullPointerException free
-        // return redirect('/leads/manage-leads');
-        // can be a more better approach, but we are doing this along with youtuber
-
+    public function deleteLead($id) {   // delete-lead/{id}
         $lead = Lead::find($id);
-        if ($lead == '') {  // if found no record agianst this id
-            return redirect('/leads/manage-leads'); // simply redirect to this
-        } else {    // if found record against that id, delele id the redirect
-            $lead->delete();    // no chance of nullpointerexception to be thrown by laravel
+        if ($lead == '') {      // todo : simply we can do, if lead record is NULL against the id
+            return redirect('/leads/manage-leads');
+        } else {
+            $lead->delete();
             return redirect('/leads/manage-leads');
         }
     }
 
     public function editLead($id, Request $request) {    // edit-lead/{id}
-
         $lead = Lead::find($id);
-
         if ($lead == '') {
             return redirect('/leads/manage-leads');
         }
 
         if ($request['submit'] == 'submit') {
-
             $request->validate([
                 'first_name' => 'required',
                 'last_name' => 'required',
@@ -138,14 +120,11 @@ class AdminController extends Controller {
                 'company' => 'required',
                 'email' => 'required|email',
                 'phone_number' => 'required|max:25'
-                // other fields are nullable and not made mandatory in blade
             ]);
 
-            $this->saveLead($lead, $request);
-
+            $this->saveLead(new Lead, $request);
             return redirect('/leads/manage-leads');
         }
-
         return view('/leads/edit_lead', ['lead_details' => $lead]);
     }
 
@@ -164,14 +143,13 @@ class AdminController extends Controller {
         $lead->country = $request['country'];
         $lead->zip_code = $request['zip_code'];
         $lead->description = $request['description'];
+
+        // todo : handle case if model is saved or not, return true or false
         $lead->save();
     }
-
 
     public function defaultMethod() {
         // practice collection methods here
     }
-
-
 
 }
