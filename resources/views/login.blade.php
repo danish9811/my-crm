@@ -34,7 +34,7 @@
     <!-- if any error in session, spit it here in danger -->
     @if(session()->has('error'))
       <div class="alert alert-danger">{{ session()->get('error') }}</div>
-  @endif
+    @endif
 
   <!-- action made blank, to redirect to the same page | hahaha | good thing -->
     <!-- we are not doing validations here with javascript, because this tutorial series is purely on laravel -->
@@ -61,12 +61,9 @@
       <div>
         <div class="col-xs-8">
           <div class="checkbox icheck">
-            <label>
-              <input type="checkbox">
-              Remember Me </label>
-
+            <label><input type="checkbox">Remember Me </label>
             <!-- todo : create forgot password tiny module -->
-            <a href="pages-recover-password.html" class="pull-right"><i class="fa fa-lock"></i> Forgot password?</a>
+            <a href="{{ url('forgot-password') }}" class="pull-right"><i class="fa fa-lock"></i> Forgot password?</a>
           </div>
         </div>
         <!-- /.col -->
