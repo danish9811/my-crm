@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dummy;
 use App\Models\Lead;
-use App\Models\User;
 use Auth;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -12,7 +10,6 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\Hash;
 use Session;
 
 class AdminController extends Controller {
@@ -75,8 +72,7 @@ class AdminController extends Controller {
      * @author danish mehmood
      */
     public function addLead(Request $request) { // add-lead
-        $submit = $request['submit'];
-        if ($submit === 'submit') {
+        if ($request['submit'] === 'submit') {
             $request->validate([
                 'first_name' => 'required',
                 'last_name' => 'required',
@@ -91,13 +87,13 @@ class AdminController extends Controller {
         return view('leads/add_lead');
     }
 
-    public function manageLeads() { // manage-leads
+    public function manageLeads() {
         return view('leads/manage_leads')->with('leadsDataArr', Lead::all());
     }
 
     public function deleteLead($id) {   // delete-lead/{id}
         $lead = Lead::find($id);
-        if ($lead == '') {      // todo : simply we can do, if lead record is NULL against the id
+        if ($lead == NULL) {
             return redirect('/leads/manage-leads');
         } else {
             $lead->delete();
@@ -107,9 +103,8 @@ class AdminController extends Controller {
 
     public function editLead($id, Request $request) {    // edit-lead/{id}
         $lead = Lead::find($id);
-        if ($lead == '') {  // todo : handle this scenario carefull with isset, NULLs
+        if ($lead == NULL)
             return redirect('/leads/manage-leads');
-        }
 
         if ($request['submit'] == 'submit') {
             $request->validate([
@@ -142,14 +137,20 @@ class AdminController extends Controller {
         $lead->country = $request['country'];
         $lead->zip_code = $request['zip_code'];
         $lead->description = $request['description'];
+        return $lead->save();
+    }
 
-        // todo : handle case if model is saved or not, return true or false
-        $lead->save();
+    public function viewLead($id) {
+        $lead = Lead::find($id);
+        return ($lead == NULL) ? redirect('/leads/manage-leads') : view('/leads/view_lead', compact('lead'));
+    }
+
+    public function convertLead($id) {
+
     }
 
     public function defaultMethod() {
         // practice code more and more
-
     }
 
 }
