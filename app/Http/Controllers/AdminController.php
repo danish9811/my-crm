@@ -147,7 +147,8 @@ class AdminController extends Controller {
     }
 
     public function defaultMethod() {   // default
-        // practice code more and more
+        // todo : write practice code here for default method
+
     }
 
 }
