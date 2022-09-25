@@ -96,7 +96,7 @@
               <div class="col-lg-8">
                 <h2 class="text-center">Description</h2>
                 <p class="text-center">{{ $lead['description'] }}</p>
-                <a href="{{ url('/leads/convert-lead') }}" class="btn btn-primary btn-sm">Convert</a>
+                <a href="{{ url('/leads/convert-lead/'.$lead['id']) }}" class="btn btn-primary btn-sm">Convert</a>
                 <a href="{{ url('/leads/edit-lead/'.$lead['id']) }}" class="btn btn-primary btn-sm ml-2">Edit</a>
               </div>
 
