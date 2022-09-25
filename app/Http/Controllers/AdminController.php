@@ -24,8 +24,7 @@ class AdminController extends Controller {
      * @author danish mehmood
      */
     public function login(Request $request) {   // login
-        $submit = $request['submit'];
-        if ($submit === 'submit') {
+        if ($request['submit'] === 'submit') {
             $request->validate([
                 'email' => 'required',
                 'password' => 'required'
@@ -93,19 +92,16 @@ class AdminController extends Controller {
 
     public function deleteLead($id) {   // delete-lead/{id}
         $lead = Lead::find($id);
-        if ($lead == NULL) {
+        if ($lead == NULL)
             return redirect('/leads/manage-leads');
-        } else {
-            $lead->delete();
-            return redirect('/leads/manage-leads');
-        }
+        $lead->delete();
+        return redirect('/leads/manage-leads');
     }
 
     public function editLead($id, Request $request) {    // edit-lead/{id}
         $lead = Lead::find($id);
         if ($lead == NULL)
             return redirect('/leads/manage-leads');
-
         if ($request['submit'] == 'submit') {
             $request->validate([
                 'first_name' => 'required',
