@@ -136,16 +136,17 @@ class AdminController extends Controller {
         return $lead->save();
     }
 
-    public function viewLead($id) {
+    public function viewLead($id) { // view-lead(id)
         $lead = Lead::find($id);
         return ($lead == NULL) ? redirect('/leads/manage-leads') : view('/leads/view_lead', compact('lead'));
     }
 
-    public function convertLead($id) {
-
+    public function convertLead($id) {  // convert-lead(id)
+        $lead = Lead::find($id);
+        return ($lead == NULL) ? redirect('/leads/manage-leads') : view('/leads/convert_lead', compact('lead'));
     }
 
-    public function defaultMethod() {
+    public function defaultMethod() {   // default
         // practice code more and more
     }
 
