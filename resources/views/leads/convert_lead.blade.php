@@ -7,7 +7,7 @@
     <div class="content-header sty-one">
       <h1>Conver Lead</h1>
       <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><i class="fa fa-angle-right"></i> Convert Lead</li>
       </ol>
     </div>
@@ -31,12 +31,12 @@
 
                   <h4>Create new Deal</h4>
 
-                  <form class="mt-3" action="{{ url('leads/convert-lead'. $lead['id']) }}" method="post">
+                  <form class="mt-3" action="{{ url('leads/convert-lead/'. $lead['id']) }}" method="post">
                     @csrf
 
                     <div class="form-group">
                       <label for="amount" class="control-label">Amount <span class="text-danger">*</span></label>
-                      <input id="amount" class="form-control" type="text" placeholder="amount" name="amount" required>
+                      <input id="amount" class="form-control" type="number" step="any" placeholder="amount" name="amount" required>
                     </div>
 
                     <div class="form-group">
@@ -60,14 +60,14 @@
 
                     <div class="form-group has-feedback">
                       <label for="lead-stage" class="control-label">Lead Source</label>
-                      <select id="lead-stage" class="form-control" name="lead_stage">
+                      <select id="lead-stage" class="form-control" name="deal_stage">
                         @foreach ($leadStatusArray as $element)
                           <option value="{{ $element }}">{{ $element }}</option>
                         @endforeach
                       </select>
                       <span class="fa fa-globe form-control-feedback" aria-hidden="true"></span>
                       <!-- error not handled for validation, but still we are showing its error -->
-                      @error('lead_stage')
+                      @error('deal_stage')
                       <span class="text-danger">{{ $message }}</span>
                       @enderror
                     </div>
