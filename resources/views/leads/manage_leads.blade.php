@@ -29,8 +29,8 @@
                         <div class="col-12">
                           <span class="info-box-icon bg-transparent"><i class="ti-stats-up text-white"></i></span>
                           <div class="info-box-content">
-                            <h6 class="info-box-text text-white">New Orders</h6>
-                            <h1 class="text-white">1,150</h1>
+                            <h6 class="info-box-text text-white">Lead records found</h6>
+                            <h1 class="text-white">{{ $leadsDataArr->count() }} </h1>
                             <span class="progress-description text-white"> 70% Increase in 30 Days </span>
                           </div>
                         </div>
@@ -94,7 +94,6 @@
                           <th>Lead Status</th>
                           <th>Lead Source</th>
                           <th>Country</th>
-                          <th>Zip Code</th>
                           <th>Actions</th>
                         </tr>
                         </thead>
@@ -112,7 +111,6 @@
                             <td>{{ $singleValue['lead_status'] }}</td>
                             <td>{{ $singleValue['lead_source'] }}</td>
                             <td>{{ $singleValue['country'] }}</td>
-                            <td>{{ $singleValue['zip_code'] }}</td>
 
                             <td class="list-inline">
                               <a href="{{ url('/leads/edit-lead/' . $singleValue['id']) }}" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span></a>
@@ -133,7 +131,6 @@
                           <th>Lead Status</th>
                           <th>Lead Source</th>
                           <th>Country</th>
-                          <th>Zip Code</th>
                           <th>Actions</th>
                         </tr>
                         </tfoot>
