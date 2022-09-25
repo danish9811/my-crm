@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
+use App\Models\Contact;
+use App\Models\Deal;
 use App\Models\Lead;
 use Auth;
 use Illuminate\Contracts\Foundation\Application;
@@ -151,11 +154,41 @@ class AdminController extends Controller {
             $request->validate([
                 'amount' => 'required',
                 'deal_name' => 'required',
-                'closing_date' => 'required'
+                'closing_date' => 'required',
+                'deal_stage' => 'required'
             ]);
+
+            $account = new Account();
+            $account->account_name = $lead->company;
+            $account->phone_number = $lead->phone_number;
+            $account->save();
+
+            $accountId = $account->id;
+
+            $contact = new Contact();
+            $contact->contact_name = $lead->first_name . ' ' . $lead->last_name;
+            $contact->account_id = $accountId;
+            $contact->email = $lead->email;
+            $contact->phone_number = $lead->phone_number;
+            $contact->save();
+
+            $contact_id = $contact->id;
+
+            $deal = new Deal();
+            $deal->amount = $request['amount'];
+            $deal->deal_name = $request['deal_name'];
+            $deal->closing_date = $request['closing_date'];
+            $deal->deal_stage = $request['deal_stage'];
+            $deal->account_id = $accountId;
+            $deal->contact_id = $contact_id;
+            $deal->save();
+
+            $lead->delete();
+
+            return redirect('/leads/manage-leads');
         }
 
-        return ($lead == NULL) ? redirect('/leads/manage-leads') : view('/leads/convert_lead', compact('lead'));
+        return view('/leads/convert_lead', compact('lead'));
     }
 
     public function defaultMethod() {   // default
