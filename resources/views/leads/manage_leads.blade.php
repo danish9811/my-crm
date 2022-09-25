@@ -5,7 +5,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
-      <h1>Support Ticket</h1>
+      <h1>The collection of leads is here to see</h1>
       <ol class="breadcrumb">
         <li><a href="#">Manage Leads</a></li>
         <li><i class="fa fa-angle-right"></i> Manage Leads</li>
@@ -102,7 +102,7 @@
 
                         @foreach ($leadsDataArr as $singleValue)
                           <tr>
-                            <td>{{ $singleValue['first_name'] }}</td>
+                            <td><a href="{{ url('/leads/view-lead/' . $singleValue['id']) }}">{{ $singleValue['first_name'] }}</a></td>
                             {{-- <td><img src="{{ url('') }}/img/img1.jpg" class="img-circle img-w-30" alt="User Image"> <a href="#">Alexander</a></td> --}}
                             <td>{{ $singleValue['title'] }}</td>
                             <td>{{ $singleValue['company'] }}</td>
