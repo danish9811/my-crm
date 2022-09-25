@@ -10,13 +10,15 @@ We will see how to convert lead into deal
 
 ### video URL at current time
 
-__Video number 5__
-[Video link at current time](https://youtu.be/iP3iIBdpYtA?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1)
+
+__Current video number 6__
+https://youtu.be/CpPq-HYr37M?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO
+
 
 
 ### URL at current time
 
-https://youtu.be/iP3iIBdpYtA?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO&t=1
+https://youtu.be/CpPq-HYr37M?list=PL8ILbWonBohkMj9XYwOxxbm0Q-uWtdCSO
 
 <br>
 
