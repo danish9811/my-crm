@@ -21,6 +21,7 @@ Route::group(['middleware' => 'auth'], static function () {
         Route::post('/edit-lead/{id}', [AdminController::class, 'editLead']);
         Route::get('/view-lead/{id}', [AdminController::class, 'viewLead']);
         Route::get('/convert-lead/{id}', [AdminController::class, 'convertLead']);
+        Route::post('/convert-lead/{id}', [AdminController::class, 'convertLead']);
     });
 });
 
