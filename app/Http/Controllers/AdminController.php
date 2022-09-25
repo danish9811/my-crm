@@ -141,8 +141,20 @@ class AdminController extends Controller {
         return ($lead == NULL) ? redirect('/leads/manage-leads') : view('/leads/view_lead', compact('lead'));
     }
 
-    public function convertLead($id) {  // convert-lead(id)
+    public function convertLead($id, Request $request) {  // convert-lead(id)
         $lead = Lead::find($id);
+
+        if ($lead == NULL)
+            return redirect('/leads/manage-leads');
+
+        if ($request['submit'] == 'submit') {
+            $request->validate([
+                'amount' => 'required',
+                'deal_name' => 'required',
+                'closing_date' => 'required'
+            ]);
+        }
+
         return ($lead == NULL) ? redirect('/leads/manage-leads') : view('/leads/convert_lead', compact('lead'));
     }
 
