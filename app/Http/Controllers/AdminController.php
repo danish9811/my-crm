@@ -95,7 +95,7 @@ class AdminController extends Controller {
 
     public function deleteLead($id) {   // delete-lead/{id}
         $lead = Lead::find($id);
-        if ($lead == NULL)
+        if ($lead === NULL)
             return redirect('/leads/manage-leads');
         $lead->delete();
         return redirect('/leads/manage-leads');
@@ -103,9 +103,9 @@ class AdminController extends Controller {
 
     public function editLead($id, Request $request) {    // edit-lead/{id}
         $lead = Lead::find($id);
-        if ($lead == NULL)
+        if ($lead === NULL)
             return redirect('/leads/manage-leads');
-        if ($request['submit'] == 'submit') {
+        if ($request['submit'] === 'submit') {
             $request->validate([
                 'first_name' => 'required',
                 'last_name' => 'required',
@@ -147,10 +147,10 @@ class AdminController extends Controller {
     public function convertLead($id, Request $request) {  // convert-lead(id)
         $lead = Lead::find($id);
 
-        if ($lead == NULL)
+        if ($lead === NULL)
             return redirect('/leads/manage-leads');
 
-        if ($request['submit'] == 'submit') {
+        if ($request['submit'] === 'submit') {
             $request->validate([
                 'amount' => 'required',
                 'deal_name' => 'required',
@@ -191,7 +191,7 @@ class AdminController extends Controller {
         return view('/leads/convert_lead', compact('lead'));
     }
 
-    public function defaultMethod() {   // default
+    public function defaultMethod(): void {   // default
         // todo : write practice code here for default method
 
     }
