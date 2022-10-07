@@ -24,4 +24,3 @@ Route::group(['middleware' => 'auth'], static function () {
         Route::post('/convert-lead/{id}', [AdminController::class, 'convertLead']);
     });
 });
-
