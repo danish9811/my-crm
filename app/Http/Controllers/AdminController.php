@@ -203,8 +203,8 @@ class AdminController extends Controller
     }
 
     public function defaultMethod(): void
-    {   // default
+    {   
+        // default
         // todo : write practice code here for default method
-
     }
 }
